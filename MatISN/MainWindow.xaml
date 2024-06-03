@@ -1,0 +1,623 @@
+﻿<Window
+    x:Class="MatISN.MainWindow"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+    xmlns:local="clr-namespace:MatISN"
+    xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+    Title="pageAccueil"
+    Width="900"
+    Height="650"
+    MinWidth="900"
+    MinHeight="620"
+    WindowStartupLocation="CenterScreen"
+    mc:Ignorable="d">
+    <Grid>
+
+
+        <!--  1ème Colonne  -->
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="13*" />
+            <ColumnDefinition Width="32*" />
+        </Grid.ColumnDefinitions>
+
+        <StackPanel Background="#FF363740">
+            <Label
+                x:Name="labelNom"
+                Margin="0,20,0,0"
+                HorizontalAlignment="Center"
+                Background="{x:Null}"
+                Content="MatISN"
+                FontFamily="Comic Sans MS"
+                FontSize="36"
+                FontWeight="Bold"
+                Foreground="White" />
+            <Button
+                x:Name="butProfil"
+                Margin="0,30,0,0"
+                Background="#FF363740"
+                BorderBrush="#FF31323A"
+                Click="butProfil_Click"
+                Content="Profil"
+                FontFamily="Comic Sans MS"
+                FontSize="14"
+                Foreground="White" />
+            <Button
+                x:Name="butMateriel"
+                Background="#FF363740"
+                BorderBrush="#FF31323A"
+                Click="butMateriel_Click"
+                Content="Matériels"
+                FontFamily="Comic Sans MS"
+                FontSize="14"
+                Foreground="White" />
+            <Button
+                x:Name="butSuivieM"
+                Background="#FF363740"
+                BorderBrush="#FF31323A"
+                Click="butSuivieM_Click"
+                Content="Suivie de demande"
+                FontFamily="Comic Sans MS"
+                FontSize="14"
+                Foreground="White" />
+
+
+        </StackPanel>
+
+
+        <!--  2ème Colonne Profil  -->
+
+        <Grid
+            x:Name="GridProfil"
+            Grid.Column="1"
+            Background="#E0E0E0"
+            Visibility="Collapsed">
+            <StackPanel>
+                <Label
+                    Margin="0,0,0,20"
+                    Content="Profil"
+                    FontSize="24"
+                    FontWeight="Bold" />
+                <StackPanel Orientation="Horizontal">
+                    <Image
+                        Width="100"
+                        Height="100"
+                        Margin="20,0,20,0"
+                        Source="/iconPProfil.jpg" />
+                    <StackPanel>
+                        <TextBlock
+                            FontSize="18"
+                            FontWeight="Bold"
+                            Text="Christophe François" />
+                        <TextBlock FontSize="14" Text="Sapeur" />
+                        <TextBlock FontSize="14" Text="Lyon" />
+                    </StackPanel>
+                    <StackPanel Margin="50,0,0,0">
+                        <Button
+                            Width="120"
+                            Margin="10,58,0,0"
+                            Content="Nouvelle Photo" />
+                        <Button
+                            Width="120"
+                            Margin="10,0,0,0"
+                            Content="Supprimer" />
+                    </StackPanel>
+                </StackPanel>
+
+
+                <Separator Margin="20,20,20,20" />
+
+                <Grid>
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition Width="*" />
+                        <ColumnDefinition Width="*" />
+                    </Grid.ColumnDefinitions>
+                    <Grid.RowDefinitions>
+                        <RowDefinition Height="Auto" />
+                        <RowDefinition Height="Auto" />
+                        <RowDefinition Height="Auto" />
+                        <RowDefinition Height="Auto" />
+                        <RowDefinition Height="Auto" />
+                        <RowDefinition Height="Auto" />
+                    </Grid.RowDefinitions>
+
+                    <Label
+                        Grid.Row="0"
+                        Grid.Column="0"
+                        Margin="0,0,0,5"
+                        Content="Prénom" />
+                    <TextBox
+                        x:Name="txtPrenom"
+                        Grid.Row="1"
+                        Grid.Column="0"
+                        Margin="0,0,10,0"
+                        GotFocus="EnleverText"
+                        LostFocus="AjouterText"
+                        Text="ex : Christophe" />
+
+                    <Label
+                        Grid.Row="0"
+                        Grid.Column="1"
+                        Margin="0,0,0,5"
+                        Content="Nom de Famille" />
+                    <TextBox
+                        x:Name="txtNom"
+                        Grid.Row="1"
+                        Grid.Column="1"
+                        Margin="0,0,10,0"
+                        GotFocus="EnleverText"
+                        LostFocus="AjouterText"
+                        Text="ex : François" />
+
+                    <Label
+                        Grid.Row="2"
+                        Grid.Column="0"
+                        Margin="0,20,0,5"
+                        Content="Nom d'utilisateur" />
+                    <TextBox
+                        x:Name="txtNomUtilisateur"
+                        Grid.Row="3"
+                        Grid.Column="0"
+                        Margin="0,0,10,0"
+                        GotFocus="EnleverText"
+                        LostFocus="AjouterText"
+                        Text="ex : christophe.francois" />
+
+                    <Label
+                        Grid.Row="2"
+                        Grid.Column="1"
+                        Margin="0,20,0,5"
+                        Content="Adresse Mail" />
+                    <TextBox
+                        x:Name="txtEmail"
+                        Grid.Row="3"
+                        Grid.Column="1"
+                        Margin="0,0,10,0"
+                        GotFocus="EnleverText"
+                        LostFocus="AjouterText"
+                        Text="ex : christophe@exemple.com" />
+
+                    <Label
+                        Grid.Row="4"
+                        Grid.Column="0"
+                        Margin="0,20,0,5"
+                        Content="Numéro de téléphone" />
+                    <TextBox
+                        x:Name="txtTelephone"
+                        Grid.Row="5"
+                        Grid.Column="0"
+                        Margin="0,0,10,0"
+                        GotFocus="EnleverText"
+                        LostFocus="AjouterText"
+                        Text="ex : 0612111180" />
+                </Grid>
+            </StackPanel>
+        </Grid>
+
+        <!--  Fin 2ème Colonne Profil  -->
+
+
+
+        <!--  2ème Colonne Liste matériel  -->
+
+        <Grid
+            x:Name="GridListeMateriel"
+            Grid.Column="1"
+            Background="#E0E0E0"
+            Visibility="Collapsed">
+            <StackPanel Grid.Column="1" Margin="10">
+                <TextBlock
+                    Margin="0,0,0,10"
+                    FontSize="20"
+                    Text="Liste des matériaux" />
+
+
+                <DockPanel>
+                    <TextBlock
+                        Margin="0,0,10,0"
+                        DockPanel.Dock="Left"
+                        Text="2 articles sélectionné" />
+                    <TextBox
+                        x:Name="txtRecherche1"
+                        Width="200"
+                        Margin="220,0,10,0"
+                        HorizontalAlignment="Right"
+                        VerticalAlignment="Center" />
+                    <Button
+                        HorizontalAlignment="Right"
+                        VerticalAlignment="Center"
+                        Content="Filtre" />
+                </DockPanel>
+
+                <DataGrid
+                    x:Name="MaterialDataGrid1"
+                    Margin="0,10,0,10"
+                    AutoGenerateColumns="False"
+                    CanUserAddRows="False">
+                    <DataGrid.Columns>
+                        <DataGridTemplateColumn Width="50">
+                            <DataGridTemplateColumn.Header>
+                                <CheckBox />
+                            </DataGridTemplateColumn.Header>
+                            <DataGridTemplateColumn.CellTemplate>
+                                <DataTemplate>
+                                    <CheckBox />
+                                </DataTemplate>
+                            </DataGridTemplateColumn.CellTemplate>
+                        </DataGridTemplateColumn>
+                        <DataGridTextColumn
+                            Width="*"
+                            Binding="{Binding Nom}"
+                            Header="Nom" />
+                        <DataGridTextColumn
+                            Width="*"
+                            Binding="{Binding Categorie}"
+                            Header="Catégorie" />
+                        <DataGridTextColumn
+                            Width="*"
+                            Binding="{Binding Prix}"
+                            Header="Prix" />
+                    </DataGrid.Columns>
+                </DataGrid>
+
+                <DockPanel Margin="0,27,0,0" HorizontalAlignment="Right">
+
+
+                    <Button
+                        Width="90"
+                        Height="30"
+                        Margin="0,0,10,0"
+                        Content="Précédent"
+                        FontSize="16"
+                        Foreground="Black">
+                        <Button.Resources>
+                            <Style TargetType="Border">
+                                <Setter Property="CornerRadius" Value="10" />
+                            </Style>
+                        </Button.Resources>
+                    </Button>
+
+
+
+                    <TextBlock
+                        Margin="0,0,10,0"
+                        VerticalAlignment="Center"
+                        Text="Page 1 sur 10" />
+
+
+                    <Button
+                        Width="90"
+                        Height="30"
+                        Margin="0,0,10,0"
+                        Content="Suivant"
+                        FontSize="16">
+                        <Button.Resources>
+                            <Style TargetType="Border">
+                                <Setter Property="CornerRadius" Value="10" />
+                            </Style>
+                        </Button.Resources>
+                    </Button>
+
+
+
+                </DockPanel>
+
+                <Button
+                    Width="150"
+                    Height="40"
+                    Margin="0,33,0,0"
+                    HorizontalAlignment="Right"
+                    Background="#FF363740"
+                    Content="Faire la demande"
+                    Foreground="White">
+                    <Button.Resources>
+                        <Style TargetType="Border">
+                            <Setter Property="CornerRadius" Value="10" />
+                        </Style>
+                    </Button.Resources>
+                </Button>
+
+            </StackPanel>
+        </Grid>
+
+        <!--  Fin 2ème Colonne Liste matériel  -->
+
+
+
+        <!--  2ème Colonne Suivie de demande  -->
+
+        <Grid
+            x:Name="GridSuivieDemande"
+            Grid.Column="1"
+            Background="#E0E0E0" Visibility="Visible">
+            <StackPanel Grid.Column="1" Margin="10">
+                <TextBlock
+                    Margin="0,0,0,10"
+                    FontSize="20"
+                    Text="Suivie de demande" />
+
+                <DockPanel>
+                    <TextBlock x:Name="TxtArticlSelect"
+                        Margin="0,0,10,0"
+                        DockPanel.Dock="Left"
+                        Text="2 articles sélectionné" />
+                    <TextBox
+                        x:Name="txtRecherche2"
+                        Width="200"
+                        Margin="220,0,10,0"
+                        HorizontalAlignment="Right"
+                        VerticalAlignment="Center" />
+                </DockPanel>
+
+                <DataGrid
+                    x:Name="MaterialDataGrid2"
+                    Margin="0,10,0,10"
+                    AutoGenerateColumns="False"
+                    CanUserAddRows="False">
+                    <DataGrid.Columns>
+                        <DataGridTemplateColumn Width="50">
+                            <DataGridTemplateColumn.Header>
+                                <CheckBox />
+                            </DataGridTemplateColumn.Header>
+                            <DataGridTemplateColumn.CellTemplate>
+                                <DataTemplate>
+                                    <CheckBox />
+                                </DataTemplate>
+                            </DataGridTemplateColumn.CellTemplate>
+                        </DataGridTemplateColumn>
+                        <DataGridTextColumn
+                            Width="*"
+                            Binding="{Binding Nom}"
+                            Header="Nom" />
+                        <DataGridTextColumn
+                            Width="*"
+                            Binding="{Binding Categorie}"
+                            Header="Catégorie" />
+                        <DataGridTextColumn
+                            Width="*"
+                            Binding="{Binding Prix}"
+                            Header="Prix" />
+                    </DataGrid.Columns>
+                </DataGrid>
+
+                <DockPanel Margin="0,27,0,0" HorizontalAlignment="Right">
+
+
+                    <Button
+                        Width="90"
+                        Height="30"
+                        Margin="0,0,10,0"
+                        Content="Précédent"
+                        FontSize="16"
+                        Foreground="Black">
+                        <Button.Resources>
+                            <Style TargetType="Border">
+                                <Setter Property="CornerRadius" Value="10" />
+                            </Style>
+                        </Button.Resources>
+                    </Button>
+
+
+
+                    <TextBlock
+                        Margin="0,0,10,0"
+                        VerticalAlignment="Center"
+                        Text="Page 1 sur 10" />
+
+
+                    <Button
+                        Width="90"
+                        Height="30"
+                        Margin="0,0,10,0"
+                        Content="Suivant"
+                        FontSize="16">
+                        <Button.Resources>
+                            <Style TargetType="Border">
+                                <Setter Property="CornerRadius" Value="10" />
+                            </Style>
+                        </Button.Resources>
+                    </Button>
+
+
+
+                </DockPanel>
+
+                <Button
+                    Width="150"
+                    Height="40"
+                    Margin="0,33,0,0"
+                    HorizontalAlignment="Right"
+                    Background="#FF363740"
+                    Content="date de livraison"
+                    Foreground="White" Click="DateLivraison_Click">
+                    <Button.Resources>
+                        <Style TargetType="Border">
+                            <Setter Property="CornerRadius" Value="10" />
+                        </Style>
+                    </Button.Resources>
+                </Button>
+
+            </StackPanel>
+
+        </Grid>
+
+        <!--  Fin 2ème Colonne Suivie de demande  -->
+
+
+
+
+
+        <!--  2ème Colonne Test  -->
+        <Grid
+            x:Name="GridTest"
+            Grid.Column="1"
+            Background="#E0E0E0" Visibility="Collapsed">     
+            <StackPanel>
+                <TextBlock
+                    HorizontalAlignment="Center"
+                    FontSize="20"
+                    FontWeight="Bold"
+                    Text="Catalogue de Matériel de Pompier" />
+                <StackPanel HorizontalAlignment="Center" Orientation="Horizontal">
+                    <TextBlock VerticalAlignment="Center" Text="Filtrer par catégorie : " />
+                    <ComboBox
+                        x:Name="butFiltreCategorie"
+                        Width="200"
+                        Margin="10,0"
+                        Loaded="FiltreCategorie_Loaded" />
+                    <Button Click="butFiltre_Click" Content="Filtrer" />
+                </StackPanel>
+
+                <ScrollViewer Height="400" VerticalScrollBarVisibility="Auto">
+
+                    <ListBox x:Name="EquipmentList" SelectionMode="Multiple">
+                        <ListBox.ItemTemplate>
+                            <DataTemplate>
+                                <StackPanel Margin="5" Orientation="Horizontal">
+                                    <Image
+                                        Width="50"
+                                        Height="50"
+                                        Margin="5"
+                                        Source="{Binding CheminImage}" />
+                                    <TextBlock
+                                        Width="200"
+                                        Margin="5"
+                                        Text="{Binding Nom}" />
+                                    <TextBlock
+                                        Width="100"
+                                        Margin="5"
+                                        Text="{Binding Categorie}" />
+                                    <TextBlock
+                                        Width="50"
+                                        Margin="5"
+                                        Text="{Binding Prix, StringFormat=C}" />
+                                    <CheckBox Margin="5" IsChecked="{Binding IsSelected, Mode=TwoWay}" />
+                                    <TextBlock
+                                        Margin="5"
+                                        VerticalAlignment="Center"
+                                        Text="Quantité :" />
+                                    <TextBox
+                                        Width="50"
+                                        Margin="5"
+                                        Text="{Binding Quantite, Mode=TwoWay}" />
+                                </StackPanel>
+                            </DataTemplate>
+                        </ListBox.ItemTemplate>
+                    </ListBox>
+                </ScrollViewer>
+
+
+
+                <TextBlock
+                    x:Name="SelectedCountText"
+                    Margin="10"
+                    HorizontalAlignment="Center"
+                    FontSize="16"
+                    FontWeight="Bold"
+                    Text="Matériel sélectionné : 0" />
+
+                <TextBlock
+                    x:Name="TotalPriceText"
+                    Margin="10"
+                    HorizontalAlignment="Center"
+                    FontSize="16"
+                    FontWeight="Bold"
+                    Text="Prix total : 0" />
+
+
+                <Button
+                    Width="141"
+                    Height="40"
+                    Margin="0,0,20,0"
+                    HorizontalAlignment="Right"
+                    Background="#FF363740"
+                    Content="Faire la demande"
+                    Foreground="White">
+                    <Button.Resources>
+                        <Style TargetType="{x:Type Border}">
+                            <Setter Property="CornerRadius" Value="10" />
+                        </Style>
+                    </Button.Resources>
+                </Button>
+
+
+            </StackPanel>
+
+        </Grid>
+
+        <!--  2ème Colonne Date de livraison -->
+        <Grid x:Name="GridDateLivraison"
+              Grid.Column="1"
+              Background="#E0E0E0" Visibility="Collapsed">
+            <StackPanel>
+                <TextBlock
+                HorizontalAlignment="Center"
+                FontSize="20"
+                FontWeight="Bold"
+                Text="Choisissez la date de livraison" />
+
+                <DataGrid
+                    x:Name="MaterialDataGridDateLivraison"
+                    Margin="0,10,0,10"
+                    AutoGenerateColumns="False"
+                    CanUserAddRows="False">
+                    <DataGrid.Columns>
+                        <DataGridTemplateColumn Width="50">
+                        </DataGridTemplateColumn>
+                        <DataGridTextColumn
+                        Width="*"
+                        Binding="{Binding Nom}"
+                        Header="Nom" />
+                        <DataGridTextColumn
+                        Width="*"
+                        Binding="{Binding Categorie}"
+                        Header="Catégorie" />
+                        <DataGridTextColumn
+                        Width="*"
+                        Binding="{Binding Prix}"
+                        Header="Prix" />
+                    </DataGrid.Columns>
+                </DataGrid>
+
+                <DatePicker Margin="0,20,0,0"></DatePicker>
+
+                <Grid>
+                <Button
+                    Width="150"
+                    Height="40"
+                    Margin="0,33,0,0"
+                    HorizontalAlignment="Right"
+                    Background="#FF363740"
+                    Content="Valider"
+                    Foreground="White" Click="ValiderDateLivraison_Click">
+                    <Button.Resources>
+                        <Style TargetType="Border">
+                            <Setter Property="CornerRadius" Value="10" />
+                        </Style>
+                    </Button.Resources>
+                </Button>
+
+                <Button
+                    Width="150"
+                    Height="40"
+                    Margin="0,33,0,0"
+                    HorizontalAlignment="Left"
+                    Background="#FF363740"
+                    Content="Annuler"
+                    Foreground="White" Click="AnnulerLivraison_Click">
+                    <Button.Resources>
+                        <Style TargetType="Border">
+                            <Setter Property="CornerRadius" Value="10" />
+                        </Style>
+                    </Button.Resources>
+                </Button>
+                </Grid>
+
+
+            </StackPanel>
+            
+        </Grid>
+
+
+    </Grid>
+</Window>
