@@ -7,19 +7,22 @@
     xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
     Title="pageAccueil"
     Width="900"
-    Height="650"
-    MinWidth="900"
-    MinHeight="620"
+    Height="700"
+    MinWidth="850"
+    MinHeight="670"
     WindowStartupLocation="CenterScreen"
     mc:Ignorable="d">
     <Grid>
 
 
-        <!--  1ème Colonne  -->
+
         <Grid.ColumnDefinitions>
-            <ColumnDefinition Width="13*" />
-            <ColumnDefinition Width="32*" />
+            <ColumnDefinition Width="21*" />
+            <ColumnDefinition Width="79*" />
         </Grid.ColumnDefinitions>
+
+
+        <!--  1ème Colonne  -->
 
         <StackPanel Background="#FF363740">
             <Label
@@ -194,14 +197,22 @@
             </StackPanel>
         </Grid>
 
-        <!--  Fin 2ème Colonne Profil  -->
 
 
 
-        <!--  2ème Colonne Liste matériel  -->
+
+
+
+
+
+
+
+
+
+        <!--2ème Colonne Suivie de demande-->
 
         <Grid
-            x:Name="GridListeMateriel"
+            x:Name="GridSuivieDemande"
             Grid.Column="1"
             Background="#E0E0E0"
             Visibility="Collapsed">
@@ -209,135 +220,11 @@
                 <TextBlock
                     Margin="0,0,0,10"
                     FontSize="20"
-                    Text="Liste des matériaux" />
-
-
-                <DockPanel>
-                    <TextBlock
-                        Margin="0,0,10,0"
-                        DockPanel.Dock="Left"
-                        Text="2 articles sélectionné" />
-                    <TextBox
-                        x:Name="txtRecherche1"
-                        Width="200"
-                        Margin="220,0,10,0"
-                        HorizontalAlignment="Right"
-                        VerticalAlignment="Center" />
-                    <Button
-                        HorizontalAlignment="Right"
-                        VerticalAlignment="Center"
-                        Content="Filtre" />
-                </DockPanel>
-
-                <DataGrid
-                    x:Name="MaterialDataGrid1"
-                    Margin="0,10,0,10"
-                    AutoGenerateColumns="False"
-                    CanUserAddRows="False">
-                    <DataGrid.Columns>
-                        <DataGridTemplateColumn Width="50">
-                            <DataGridTemplateColumn.Header>
-                                <CheckBox />
-                            </DataGridTemplateColumn.Header>
-                            <DataGridTemplateColumn.CellTemplate>
-                                <DataTemplate>
-                                    <CheckBox />
-                                </DataTemplate>
-                            </DataGridTemplateColumn.CellTemplate>
-                        </DataGridTemplateColumn>
-                        <DataGridTextColumn
-                            Width="*"
-                            Binding="{Binding Nom}"
-                            Header="Nom" />
-                        <DataGridTextColumn
-                            Width="*"
-                            Binding="{Binding Categorie}"
-                            Header="Catégorie" />
-                        <DataGridTextColumn
-                            Width="*"
-                            Binding="{Binding Prix}"
-                            Header="Prix" />
-                    </DataGrid.Columns>
-                </DataGrid>
-
-                <DockPanel Margin="0,27,0,0" HorizontalAlignment="Right">
-
-
-                    <Button
-                        Width="90"
-                        Height="30"
-                        Margin="0,0,10,0"
-                        Content="Précédent"
-                        FontSize="16"
-                        Foreground="Black">
-                        <Button.Resources>
-                            <Style TargetType="Border">
-                                <Setter Property="CornerRadius" Value="10" />
-                            </Style>
-                        </Button.Resources>
-                    </Button>
-
-
-
-                    <TextBlock
-                        Margin="0,0,10,0"
-                        VerticalAlignment="Center"
-                        Text="Page 1 sur 10" />
-
-
-                    <Button
-                        Width="90"
-                        Height="30"
-                        Margin="0,0,10,0"
-                        Content="Suivant"
-                        FontSize="16">
-                        <Button.Resources>
-                            <Style TargetType="Border">
-                                <Setter Property="CornerRadius" Value="10" />
-                            </Style>
-                        </Button.Resources>
-                    </Button>
-
-
-
-                </DockPanel>
-
-                <Button
-                    Width="150"
-                    Height="40"
-                    Margin="0,33,0,0"
-                    HorizontalAlignment="Right"
-                    Background="#FF363740"
-                    Content="Faire la demande"
-                    Foreground="White">
-                    <Button.Resources>
-                        <Style TargetType="Border">
-                            <Setter Property="CornerRadius" Value="10" />
-                        </Style>
-                    </Button.Resources>
-                </Button>
-
-            </StackPanel>
-        </Grid>
-
-        <!--  Fin 2ème Colonne Liste matériel  -->
-
-
-
-        <!--  2ème Colonne Suivie de demande  -->
-
-        <Grid
-            x:Name="GridSuivieDemande"
-            Grid.Column="1"
-            Background="#E0E0E0" Visibility="Visible">
-            <StackPanel Grid.Column="1" Margin="10">
-                <TextBlock
-                    Margin="0,0,0,10"
-                    FontSize="20"
                     Text="Suivie de demande" />
 
                 <DockPanel>
-                    <TextBlock x:Name="TxtArticlSelect"
+                    <TextBlock
+                        x:Name="TxtArticlSelect"
                         Margin="0,0,10,0"
                         DockPanel.Dock="Left"
                         Text="2 articles sélectionné" />
@@ -428,8 +315,9 @@
                     Margin="0,33,0,0"
                     HorizontalAlignment="Right"
                     Background="#FF363740"
+                    Click="DateLivraison_Click"
                     Content="date de livraison"
-                    Foreground="White" Click="DateLivraison_Click">
+                    Foreground="White">
                     <Button.Resources>
                         <Style TargetType="Border">
                             <Setter Property="CornerRadius" Value="10" />
@@ -441,24 +329,25 @@
 
         </Grid>
 
-        <!--  Fin 2ème Colonne Suivie de demande  -->
+
+
+        <!--  2ème Colonne Liste Materiel  -->
 
 
 
 
-
-        <!--  2ème Colonne Test  -->
         <Grid
-            x:Name="GridTest"
+            x:Name="GridListeMateriel"
             Grid.Column="1"
-            Background="#E0E0E0" Visibility="Collapsed">     
+            Background="#E0E0E0"
+            Visibility="Visible">
             <StackPanel>
                 <TextBlock
                     HorizontalAlignment="Center"
                     FontSize="20"
                     FontWeight="Bold"
                     Text="Catalogue de Matériel de Pompier" />
-                <StackPanel HorizontalAlignment="Center" Orientation="Horizontal">
+                <StackPanel Orientation="Horizontal">
                     <TextBlock VerticalAlignment="Center" Text="Filtrer par catégorie : " />
                     <ComboBox
                         x:Name="butFiltreCategorie"
@@ -466,11 +355,62 @@
                         Margin="10,0"
                         Loaded="FiltreCategorie_Loaded" />
                     <Button Click="butFiltre_Click" Content="Filtrer" />
+
+
+                    <TextBox TextWrapping="Wrap" Text="" Width="120" Margin="100,0,0,0"/>
+
+
+
                 </StackPanel>
 
-                <ScrollViewer Height="400" VerticalScrollBarVisibility="Auto">
+                <ScrollViewer
+                    Height="300"
+                    Margin="0,10,0,0"
+                    VerticalScrollBarVisibility="Auto">
 
                     <ListBox x:Name="EquipmentList" SelectionMode="Multiple">
+                        <ListBox.ItemTemplate>
+                            <DataTemplate>
+                                <StackPanel Margin="5" Orientation="Horizontal">
+                                    <Image
+                                        Width="50"
+                                        Height="50"
+                                        Margin="5"
+                                        Source="{Binding CheminImage}" />
+                                    <TextBlock
+                                        Width="200"
+                                        Margin="5"
+                                        Text="{Binding Nom}" />
+                                    <TextBlock
+                                        Width="100"
+                                        Margin="5"
+                                        Text="{Binding Categorie}" />
+                                    <TextBlock
+                                        Width="50"
+                                        Margin="5"
+                                        Text="{Binding Prix, StringFormat=C}" />
+                                    <CheckBox Margin="5" IsChecked="{Binding IsSelected, Mode=TwoWay}" />
+                                    <TextBlock
+                                        Margin="5"
+                                        VerticalAlignment="Center"
+                                        Text="Quantité :" />
+                                    <TextBox
+                                        Width="50"
+                                        Margin="5"
+                                        Text="{Binding Quantite, Mode=TwoWay}" />
+                                </StackPanel>
+                            </DataTemplate>
+                        </ListBox.ItemTemplate>
+                    </ListBox>
+                </ScrollViewer>
+
+
+                <ScrollViewer
+                    Height="130"
+                    Margin="0,10,0,0"
+                    VerticalScrollBarVisibility="Auto">
+
+                    <ListBox x:Name="ListeCommande" SelectionMode="Multiple">
                         <ListBox.ItemTemplate>
                             <DataTemplate>
                                 <StackPanel Margin="5" Orientation="Horizontal">
@@ -517,7 +457,7 @@
                     Text="Matériel sélectionné : 0" />
 
                 <TextBlock
-                    x:Name="TotalPriceText"
+                    x:Name="txtPrixTotal"
                     Margin="10"
                     HorizontalAlignment="Center"
                     FontSize="16"
@@ -545,16 +485,18 @@
 
         </Grid>
 
-        <!--  2ème Colonne Date de livraison -->
-        <Grid x:Name="GridDateLivraison"
-              Grid.Column="1"
-              Background="#E0E0E0" Visibility="Collapsed">
+        <!--  2ème Colonne Date de livraison  -->
+        <Grid
+            x:Name="GridDateLivraison"
+            Grid.Column="1"
+            Background="#E0E0E0"
+            Visibility="Collapsed">
             <StackPanel>
                 <TextBlock
-                HorizontalAlignment="Center"
-                FontSize="20"
-                FontWeight="Bold"
-                Text="Choisissez la date de livraison" />
+                    HorizontalAlignment="Center"
+                    FontSize="20"
+                    FontWeight="Bold"
+                    Text="Choisissez la date de livraison" />
 
                 <DataGrid
                     x:Name="MaterialDataGridDateLivraison"
@@ -562,60 +504,61 @@
                     AutoGenerateColumns="False"
                     CanUserAddRows="False">
                     <DataGrid.Columns>
-                        <DataGridTemplateColumn Width="50">
-                        </DataGridTemplateColumn>
+                        <DataGridTemplateColumn Width="50" />
                         <DataGridTextColumn
-                        Width="*"
-                        Binding="{Binding Nom}"
-                        Header="Nom" />
+                            Width="*"
+                            Binding="{Binding Nom}"
+                            Header="Nom" />
                         <DataGridTextColumn
-                        Width="*"
-                        Binding="{Binding Categorie}"
-                        Header="Catégorie" />
+                            Width="*"
+                            Binding="{Binding Categorie}"
+                            Header="Catégorie" />
                         <DataGridTextColumn
-                        Width="*"
-                        Binding="{Binding Prix}"
-                        Header="Prix" />
+                            Width="*"
+                            Binding="{Binding Prix}"
+                            Header="Prix" />
                     </DataGrid.Columns>
                 </DataGrid>
 
-                <DatePicker Margin="0,20,0,0"></DatePicker>
+                <DatePicker Margin="0,20,0,0" />
 
                 <Grid>
-                <Button
-                    Width="150"
-                    Height="40"
-                    Margin="0,33,0,0"
-                    HorizontalAlignment="Right"
-                    Background="#FF363740"
-                    Content="Valider"
-                    Foreground="White" Click="ValiderDateLivraison_Click">
-                    <Button.Resources>
-                        <Style TargetType="Border">
-                            <Setter Property="CornerRadius" Value="10" />
-                        </Style>
-                    </Button.Resources>
-                </Button>
+                    <Button
+                        Width="150"
+                        Height="40"
+                        Margin="0,33,0,0"
+                        HorizontalAlignment="Right"
+                        Background="#FF363740"
+                        Click="ValiderDateLivraison_Click"
+                        Content="Valider"
+                        Foreground="White">
+                        <Button.Resources>
+                            <Style TargetType="Border">
+                                <Setter Property="CornerRadius" Value="10" />
+                            </Style>
+                        </Button.Resources>
+                    </Button>
 
-                <Button
-                    Width="150"
-                    Height="40"
-                    Margin="0,33,0,0"
-                    HorizontalAlignment="Left"
-                    Background="#FF363740"
-                    Content="Annuler"
-                    Foreground="White" Click="AnnulerLivraison_Click">
-                    <Button.Resources>
-                        <Style TargetType="Border">
-                            <Setter Property="CornerRadius" Value="10" />
-                        </Style>
-                    </Button.Resources>
-                </Button>
+                    <Button
+                        Width="150"
+                        Height="40"
+                        Margin="0,33,0,0"
+                        HorizontalAlignment="Left"
+                        Background="#FF363740"
+                        Click="AnnulerLivraison_Click"
+                        Content="Annuler"
+                        Foreground="White">
+                        <Button.Resources>
+                            <Style TargetType="Border">
+                                <Setter Property="CornerRadius" Value="10" />
+                            </Style>
+                        </Button.Resources>
+                    </Button>
                 </Grid>
 
 
             </StackPanel>
-            
+
         </Grid>
 
 

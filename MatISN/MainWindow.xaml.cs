@@ -50,7 +50,7 @@ namespace MatISN
 
             };
 
-            MaterialDataGrid1.ItemsSource = Materiels;
+            
             MaterialDataGrid2.ItemsSource = MaterielsSuivie;
 
 
@@ -67,7 +67,7 @@ namespace MatISN
 
         private void ChargementEquipement()
         {
-            // Charger les données du matériel ici (Exemple de données statiques)
+            
 
             Materiels = new List<Materiel>
             {
@@ -168,7 +168,7 @@ namespace MatISN
 
         private void butProfil_Click(object sender, RoutedEventArgs e)
         {
-            GridTest.Visibility = Visibility.Collapsed;
+            GridListeMateriel.Visibility = Visibility.Collapsed;
             GridSuivieDemande.Visibility = Visibility.Collapsed;
             GridProfil.Visibility = Visibility.Visible;
         }
@@ -177,13 +177,13 @@ namespace MatISN
         {
             GridProfil.Visibility= Visibility.Collapsed;
             GridSuivieDemande.Visibility = Visibility.Collapsed;
-            GridTest.Visibility = Visibility.Visible;
+            GridListeMateriel.Visibility = Visibility.Visible;
         }
 
         private void butSuivieM_Click(object sender, RoutedEventArgs e)
         {
             GridProfil.Visibility = Visibility.Collapsed;
-            GridTest.Visibility= Visibility.Collapsed;
+            GridListeMateriel.Visibility= Visibility.Collapsed;
             GridSuivieDemande.Visibility = Visibility.Visible;
         }
 
@@ -191,7 +191,7 @@ namespace MatISN
         public void ChargePrixTotal()
         {
             double PrixTotal = Materiels.Where(e => e.IsSelected).Sum(e => e.PrixTotal);
-            TotalPriceText.Text = $"Prix total : {PrixTotal:C}";
+            txtPrixTotal.Text = $"Prix total : {PrixTotal:C}";
         }
 
         private void SelectionSuivie(object sender, PropertyChangedEventArgs e)
@@ -228,6 +228,12 @@ namespace MatISN
             else
                 return (unMateriel.Nom.StartsWith(txtRecherche2.Text, StringComparison.OrdinalIgnoreCase)
                 || unMateriel.Categorie.StartsWith(txtRecherche2.Text, StringComparison.OrdinalIgnoreCase));
+        }
+
+
+        private void AjoutListeCommande(object obj)
+        {
+            
         }
 
     }

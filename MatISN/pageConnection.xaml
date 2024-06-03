@@ -14,9 +14,9 @@
             <Rectangle Height="304" Canvas.Left="195" Canvas.Top="140" Width="510" HorizontalAlignment="Center" VerticalAlignment="Top" Fill="#19000000" RadiusX="0"/>
 
 
-            <TextBox x:Name="txtLogin" Text="Identifiant" Canvas.Left="302" Canvas.Top="211" HorizontalAlignment="Center" VerticalAlignment="Center" Width="300" FontSize="22" TextAlignment="Center" Foreground="#BC000000" LostFocus="AjouterText" GotFocus="EnleverText"/>
+            <TextBox x:Name="txtLogin" Canvas.Left="302" Canvas.Top="232" HorizontalAlignment="Center" VerticalAlignment="Top" Width="300" FontSize="14" TextAlignment="Center" Foreground="#BC000000" LostFocus="AjouterText" GotFocus="EnleverText" Height="20"/>
 
-            <!--<TextBox x:Name="txtDP" Text="Mots de passe" Canvas.Left="302" Canvas.Top="278" HorizontalAlignment="Left" VerticalAlignment="Center" FontSize="22" TextAlignment="Center" Foreground="#BC000000" Width="300" GotFocus="EnleverText" LostFocus="AjouterText"/>-->
+            
 
             <PasswordBox x:Name="txtMDP" Canvas.Left="302" Canvas.Top="297" Width="300" HorizontalAlignment="Center" VerticalAlignment="Top" />
 
@@ -41,8 +41,8 @@
 
 
             <Label Content="Se Connecter" Canvas.Left="374" Canvas.Top="152" FontSize="22" HorizontalAlignment="Left" VerticalAlignment="Center" FontFamily="Comic Sans MS" FontWeight="Bold"/>
-            <Label Content="Identifiant" Canvas.Left="300" Canvas.Top="187" HorizontalAlignment="Left" VerticalAlignment="Center"/>
-            <Label Content="Mots de passe" Canvas.Left="300" Canvas.Top="257" HorizontalAlignment="Left" VerticalAlignment="Center"/>
+            <Label Content="Identifiant" Canvas.Left="300" Canvas.Top="201" HorizontalAlignment="Center" VerticalAlignment="Top"/>
+            <Label Content="Mots de passe" Canvas.Left="300" Canvas.Top="266" HorizontalAlignment="Center" VerticalAlignment="Top"/>
 
 
 

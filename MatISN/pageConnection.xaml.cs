@@ -32,7 +32,7 @@ namespace MatISN
         private void EnleverText(object sender, RoutedEventArgs e)
         {
             TextBox textBox = sender as TextBox;
-            if (textBox != null && (textBox.Text == "Identifiant" || textBox.Text == "Mots de passe"))
+            if (textBox != null && (textBox.Text == "" || textBox.Text == "Mots de passe"))
             {
                 textBox.Text = "";
                 textBox.Foreground = new SolidColorBrush(Colors.Black);
@@ -46,7 +46,7 @@ namespace MatISN
             if (textBox != null && string.IsNullOrWhiteSpace(textBox.Text))
             {
                 if (textBox == txtLogin)
-                    textBox.Text = "Identifiant";
+                    textBox.Text = "";
                 else 
                     textBox.Text = "Mots de passe";
                
