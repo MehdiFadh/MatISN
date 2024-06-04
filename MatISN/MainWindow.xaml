@@ -361,7 +361,7 @@
                         Width="120"
                         Margin="100,0,0,0"
                         Text=""
-                        TextWrapping="Wrap" />
+                        TextWrapping="Wrap" TextChanged="TextBox_TextChanged" />
 
 
 
