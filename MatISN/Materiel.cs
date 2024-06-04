@@ -7,7 +7,7 @@ using System.Threading.Tasks;
 
 namespace MatISN
 {
-    public class Materiel
+    public class Materiel : Table
     {
 
         private bool isSelected;
@@ -74,6 +74,11 @@ namespace MatISN
                 
                 }
             
+        }
+
+        public override Create()
+        {
+
         }
 
 
