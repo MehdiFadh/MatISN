@@ -358,10 +358,12 @@
 
 
                     <TextBox
+                        x:Name="textMotClef"
                         Width="120"
-                        Margin="100,0,0,0"
+                        Margin="130,0,0,0"
                         Text=""
-                        TextWrapping="Wrap" TextChanged="TextBox_TextChanged" />
+                        TextChanged="textMotClef_TextChanged"
+                        TextWrapping="Wrap" />
 
 
 
@@ -377,14 +379,15 @@
                             <DataTemplate>
                                 <StackPanel Margin="5" Orientation="Horizontal">
                                     <Image
-                                        Width="50"
-                                        Height="50"
+                                        Width="70"
+                                        Height="70"
                                         Margin="5"
                                         Source="{Binding CheminImage}" />
                                     <TextBlock
-                                        Width="200"
+                                        Width="20"
                                         Margin="5"
                                         Text="{Binding Nom}" />
+                                    <TextBlock Width="100" Text="{Binding NomFournisseur}" />
                                     <TextBlock
                                         Width="100"
                                         Margin="5"
