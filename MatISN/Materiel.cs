@@ -82,10 +82,12 @@ namespace MatISN
             
         }
 
-        public override Create()
+        public override int Create()
         {
-
+            Sql = "";
+            return base.Create();
         }
+
 
 
 

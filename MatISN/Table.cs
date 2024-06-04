@@ -10,6 +10,7 @@ namespace MatISN
     public abstract class Table
     {
         private NpgsqlConnection connexion = null;
+        String sql;
 
         public NpgsqlConnection Connexion
         {
@@ -23,6 +24,20 @@ namespace MatISN
                 connexion = value;
             }
         }
+
+        public string Sql
+        {
+            get
+            {
+                return sql;
+            }
+
+            set
+            {
+                sql = value;
+            }
+        }
+
         public Table()
         {
             this.ConnexionBD();
@@ -53,17 +68,17 @@ namespace MatISN
 
         public virtual int Create()
         {
-            String sql = "";
+            
             try
             {
-                NpgsqlCommand cmd = new NpgsqlCommand(sql, Connexion);
+                NpgsqlCommand cmd = new NpgsqlCommand(this.Sql, Connexion);
                 int nb = cmd.ExecuteNonQuery();
                 return nb;
                 //nb permet de connaître le nb de lignes affectées par un insert, update, delete
             }
             catch (Exception sqlE)
             {
-                Console.WriteLine("pb de requete : " + sql + "" + sqlE);
+                Console.WriteLine("pb de requete : " + this.Sql + "" + sqlE);
                 // juste pour le debug : à transformer en MsgBox 
                 return 0;
             }
@@ -71,17 +86,16 @@ namespace MatISN
 
         public virtual int Update()
         {
-            String sql = "";
             try
             {
-                NpgsqlCommand cmd = new NpgsqlCommand(sql, Connexion);
+                NpgsqlCommand cmd = new NpgsqlCommand(this.Sql, Connexion);
                 int nb = cmd.ExecuteNonQuery();
                 return nb;
                 //nb permet de connaître le nb de lignes affectées par un insert, update, delete
             }
             catch (Exception sqlE)
             {
-                Console.WriteLine("pb de requete : " + sql + "" + sqlE);
+                Console.WriteLine("pb de requete : " + this.Sql + "" + sqlE);
                 // juste pour le debug : à transformer en MsgBox 
                 return 0;
             }
@@ -90,17 +104,16 @@ namespace MatISN
 
         public virtual int Delete()
         {
-            String sql = "";
             try
             {
-                NpgsqlCommand cmd = new NpgsqlCommand(sql, Connexion);
+                NpgsqlCommand cmd = new NpgsqlCommand(this.Sql, Connexion);
                 int nb = cmd.ExecuteNonQuery();
                 return nb;
                 //nb permet de connaître le nb de lignes affectées par un insert, update, delete
             }
             catch (Exception sqlE)
             {
-                Console.WriteLine("pb de requete : " + sql + "" + sqlE);
+                Console.WriteLine("pb de requete : " + this.Sql + "" + sqlE);
                 // juste pour le debug : à transformer en MsgBox 
                 return 0;
             }
