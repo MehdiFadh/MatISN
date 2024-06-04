@@ -11,12 +11,13 @@ namespace MatISN
     {
 
         private bool isSelected;
-
         private int quantite;
         public string Nom { get; set; }
         public string Categorie { get; set; }
         public double Prix { get; set; }
         public string CheminImage { get; set; }
+
+        public string NomFournisseur { get; set; }
         public bool IsSelected
         {
             get => isSelected;
@@ -32,6 +33,11 @@ namespace MatISN
         }
 
         
+
+       
+
+
+
 
         public int Quantite
         {

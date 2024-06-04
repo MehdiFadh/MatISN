@@ -37,6 +37,8 @@ namespace MatISN
             AjouterText(txtEmail, null);
             AjouterText(txtTelephone, null);
 
+            EquipmentList.Items.Filter = ContientMotClef;
+
             MaterielsSuivie = new List<Materiel>
             {
                 new Materiel { Nom = "Barre Hulligan", Categorie = "Outils", Prix = 128.00 },
@@ -76,7 +78,7 @@ namespace MatISN
                 new Materiel { Nom = "Extincteur", Categorie = "Équipement", Prix = 80.0, CheminImage = "img\\Extincteur.jpg", Quantite = 1},
                 new Materiel { Nom = "Lance à eau", Categorie = "Outils", Prix = 120.0, CheminImage = "img\\lance_a_eau.png", Quantite = 1},
                 new Materiel { Nom = "Botte", Categorie = "Protection", Prix = 50.0, CheminImage = "img\\botte_pompier.jpg", Quantite = 1},
-                new Materiel { Nom = "Veste", Categorie = "Protection", Prix = 80.0, CheminImage = "img\\veste_pompier.jpg", Quantite = 1},
+                new Materiel { Nom = "Veste", NomFournisseur = "GGGG", Categorie = "Protection", Prix = 80.0, CheminImage = "img\\veste_pompier.jpg", Quantite = 1},
                 new Materiel { Nom = "Corde", Categorie = "Outils", Prix = 50.0, CheminImage = "img\\corde.jpg" , Quantite = 1},
                 new Materiel { Nom = "Extincteur", Categorie = "Outils", Prix = 80.0, CheminImage = "img\\tuyau.jpg", Quantite = 1},
                 
@@ -132,6 +134,11 @@ namespace MatISN
             {
                 EquipmentList.ItemsSource = Materiels.Where(e => e.Categorie == selectedCategory).ToList();
             }
+        }
+
+        private void textMotClef_TextChanged(object sender, TextChangedEventArgs e)
+        {
+            CollectionViewSource.GetDefaultView(EquipmentList.ItemsSource).Refresh();
         }
 
 
@@ -223,11 +230,12 @@ namespace MatISN
         private bool ContientMotClef(object obj)
         {
             Materiel unMateriel = obj as Materiel;
-            if (String.IsNullOrEmpty(txtRecherche2.Text))
+            Console.WriteLine(" on recherhce " + textMotClef.Text);
+            if (String.IsNullOrEmpty(textMotClef.Text))
                 return true;
             else
-                return (unMateriel.Nom.StartsWith(txtRecherche2.Text, StringComparison.OrdinalIgnoreCase)
-                || unMateriel.Categorie.StartsWith(txtRecherche2.Text, StringComparison.OrdinalIgnoreCase));
+                return (unMateriel.Nom.StartsWith(textMotClef.Text, StringComparison.OrdinalIgnoreCase)
+                || unMateriel.Categorie.StartsWith(textMotClef.Text, StringComparison.OrdinalIgnoreCase));
         }
 
 

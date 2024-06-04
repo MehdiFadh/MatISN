@@ -20,7 +20,7 @@
 
             <PasswordBox x:Name="txtMDP" Canvas.Left="302" Canvas.Top="297" Width="300" HorizontalAlignment="Center" VerticalAlignment="Top" />
 
-            <Button x:Name="butConnection" Content="Connection" Canvas.Left="476" Canvas.Top="363" Height="41" Width="126" Background="#FF363740" FontWeight="Bold" FontSize="18" FontFamily="72" Foreground="White" HorizontalAlignment="Center" VerticalAlignment="Center" Click="butConnection_Click">
+            <Button x:Name="butConnection" Content="Connexion" Canvas.Left="476" Canvas.Top="363" Height="41" Width="126" Background="#FF363740" FontWeight="Bold" FontSize="18" FontFamily="72" Foreground="White" HorizontalAlignment="Center" VerticalAlignment="Center" Click="butConnection_Click">
                 <Button.Resources>
                     <Style TargetType="Border">
                         <Setter Property="CornerRadius" Value="10"/>
