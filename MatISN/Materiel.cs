@@ -13,7 +13,6 @@ namespace MatISN
         private bool isSelected;
 
         private int quantite;
-        //dfsdfgs
         public string Nom { get; set; }
         public string Categorie { get; set; }
         public double Prix { get; set; }
