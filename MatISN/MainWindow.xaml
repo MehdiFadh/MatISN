@@ -215,7 +215,7 @@
             x:Name="GridSuivieDemande"
             Grid.Column="1"
             Background="#E0E0E0"
-            Visibility="Collapsed">
+            Visibility="Visible">
             <StackPanel Grid.Column="1" Margin="10">
                 <TextBlock
                     Margin="0,0,0,10"
@@ -229,9 +229,10 @@
                         DockPanel.Dock="Left"
                         Text="2 articles sélectionné" />
                     <TextBox
-                        x:Name="txtRecherche2"
+                        x:Name="textMotClefSuivie"
                         Width="200"
                         Margin="220,0,10,0"
+                        TextChanged="textMotClef_TextChanged"
                         HorizontalAlignment="Right"
                         VerticalAlignment="Center" />
                 </DockPanel>
@@ -340,7 +341,7 @@
             x:Name="GridListeMateriel"
             Grid.Column="1"
             Background="#E0E0E0"
-            Visibility="Visible">
+            Visibility="Collapsed">
             <StackPanel>
                 <TextBlock
                     HorizontalAlignment="Center"
@@ -384,7 +385,7 @@
                                         Margin="5"
                                         Source="{Binding CheminImage}" />
                                     <TextBlock
-                                        Width="20"
+                                        Width="80"
                                         Margin="5"
                                         Text="{Binding Nom}" />
                                     <TextBlock Width="100" Text="{Binding NomFournisseur}" />

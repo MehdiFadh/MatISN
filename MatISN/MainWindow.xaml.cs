@@ -38,6 +38,7 @@ namespace MatISN
             AjouterText(txtTelephone, null);
 
             EquipmentList.Items.Filter = ContientMotClef;
+            
 
             MaterielsSuivie = new List<Materiel>
             {
@@ -73,14 +74,14 @@ namespace MatISN
 
             Materiels = new List<Materiel>
             {
-                new Materiel { Nom = "Casque", Categorie = "Protection", Prix = 120.0, CheminImage = "img\\Casque_de_pompier.jpg", Quantite = 1},
-                new Materiel { Nom = "Hache", Categorie = "Outils", Prix = 50.0, CheminImage = "img\\Hache.jpg" , Quantite = 1},
-                new Materiel { Nom = "Extincteur", Categorie = "Équipement", Prix = 80.0, CheminImage = "img\\Extincteur.jpg", Quantite = 1},
-                new Materiel { Nom = "Lance à eau", Categorie = "Outils", Prix = 120.0, CheminImage = "img\\lance_a_eau.png", Quantite = 1},
-                new Materiel { Nom = "Botte", Categorie = "Protection", Prix = 50.0, CheminImage = "img\\botte_pompier.jpg", Quantite = 1},
+                new Materiel { Nom = "Casque", NomFournisseur = "GGGG", Categorie = "Protection", Prix = 120.0, CheminImage = "img\\Casque_de_pompier.jpg", Quantite = 1},
+                new Materiel { Nom = "Hache", NomFournisseur = "GGGG", Categorie = "Outils", Prix = 50.0, CheminImage = "img\\Hache.jpg" , Quantite = 1},
+                new Materiel { Nom = "Extincteur", NomFournisseur = "GGGG", Categorie = "Équipement", Prix = 80.0, CheminImage = "img\\Extincteur.jpg", Quantite = 1},
+                new Materiel { Nom = "Lance à eau", NomFournisseur = "GGGG", Categorie = "Outils", Prix = 120.0, CheminImage = "img\\lance_a_eau.png", Quantite = 1},
+                new Materiel { Nom = "Botte", NomFournisseur = "GGGG", Categorie = "Protection", Prix = 50.0, CheminImage = "img\\botte_pompier.jpg", Quantite = 1},
                 new Materiel { Nom = "Veste", NomFournisseur = "GGGG", Categorie = "Protection", Prix = 80.0, CheminImage = "img\\veste_pompier.jpg", Quantite = 1},
-                new Materiel { Nom = "Corde", Categorie = "Outils", Prix = 50.0, CheminImage = "img\\corde.jpg" , Quantite = 1},
-                new Materiel { Nom = "Extincteur", Categorie = "Outils", Prix = 80.0, CheminImage = "img\\tuyau.jpg", Quantite = 1},
+                new Materiel { Nom = "Corde", NomFournisseur = "GGGG", Categorie = "Outils", Prix = 50.0, CheminImage = "img\\corde.jpg" , Quantite = 1},
+                new Materiel { Nom = "Extincteur", NomFournisseur = "GGGG", Categorie = "Outils", Prix = 80.0, CheminImage = "img\\tuyau.jpg", Quantite = 1},
                 
             };
 
@@ -230,19 +231,16 @@ namespace MatISN
         private bool ContientMotClef(object obj)
         {
             Materiel unMateriel = obj as Materiel;
-            Console.WriteLine(" on recherhce " + textMotClef.Text);
-            if (String.IsNullOrEmpty(textMotClef.Text))
+            if (String.IsNullOrEmpty(textMotClef.Text) || String.IsNullOrEmpty(textMotClefSuivie.Text))
                 return true;
             else
                 return (unMateriel.Nom.StartsWith(textMotClef.Text, StringComparison.OrdinalIgnoreCase)
-                || unMateriel.Categorie.StartsWith(textMotClef.Text, StringComparison.OrdinalIgnoreCase));
+                || unMateriel.Categorie.StartsWith(textMotClef.Text, StringComparison.OrdinalIgnoreCase)) || (unMateriel.Nom.StartsWith(textMotClefSuivie.Text, StringComparison.OrdinalIgnoreCase)
+                || unMateriel.Categorie.StartsWith(textMotClefSuivie.Text, StringComparison.OrdinalIgnoreCase));
         }
 
 
-        private void AjoutListeCommande(object obj)
-        {
-            
-        }
+        
 
     }
 }
