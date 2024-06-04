@@ -24,7 +24,7 @@
 
         <!--  1ème Colonne  -->
 
-        <StackPanel Background="#FF363740" Visibility="Hidden">
+        <StackPanel Background="#FF363740" Visibility="Visible">
             <Label
                 x:Name="labelNom"
                 Margin="0,20,0,0"
@@ -209,7 +209,7 @@
 
 
 
-        <!--2ème Colonne Suivie de demande-->
+        <!--  2ème Colonne Suivie de demande  -->
 
         <Grid
             x:Name="GridSuivieDemande"
@@ -340,7 +340,7 @@
             x:Name="GridListeMateriel"
             Grid.Column="1"
             Background="#E0E0E0"
-            Visibility="Collapsed">
+            Visibility="Visible">
             <StackPanel>
                 <TextBlock
                     HorizontalAlignment="Center"
@@ -357,7 +357,11 @@
                     <Button Click="butFiltre_Click" Content="Filtrer" />
 
 
-                    <TextBox TextWrapping="Wrap" Text="" Width="120" Margin="100,0,0,0"/>
+                    <TextBox
+                        Width="120"
+                        Margin="100,0,0,0"
+                        Text=""
+                        TextWrapping="Wrap" />
 
 
 
@@ -560,9 +564,6 @@
             </StackPanel>
 
         </Grid>
-
-        <!--   Page d'accueil  -->
-        <Grid Grid.ColumnSpan="2"/>
 
 
     </Grid>

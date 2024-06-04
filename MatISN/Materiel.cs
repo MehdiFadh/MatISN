@@ -11,7 +11,6 @@ namespace MatISN
     {
 
         private bool isSelected;
-        //r(d
         private int quantite;
         public string Nom { get; set; }
         public string Categorie { get; set; }
