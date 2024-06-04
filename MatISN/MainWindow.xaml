@@ -12,7 +12,7 @@
     MinHeight="670"
     WindowStartupLocation="CenterScreen"
     mc:Ignorable="d">
-    <Grid>
+    <Grid Background="White">
 
 
 
@@ -24,7 +24,7 @@
 
         <!--  1ème Colonne  -->
 
-        <StackPanel Background="#FF363740">
+        <StackPanel Background="#FF363740" Visibility="Hidden">
             <Label
                 x:Name="labelNom"
                 Margin="0,20,0,0"
@@ -340,7 +340,7 @@
             x:Name="GridListeMateriel"
             Grid.Column="1"
             Background="#E0E0E0"
-            Visibility="Visible">
+            Visibility="Collapsed">
             <StackPanel>
                 <TextBlock
                     HorizontalAlignment="Center"
@@ -560,6 +560,9 @@
             </StackPanel>
 
         </Grid>
+
+        <!--   Page d'accueil  -->
+        <Grid Grid.ColumnSpan="2"/>
 
 
     </Grid>
