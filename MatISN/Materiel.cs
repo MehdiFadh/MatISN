@@ -9,18 +9,24 @@ namespace MatISN
 {
     public class Materiel : Table
     {
-
-        private bool isSelected;
         private int quantite;
+        private bool isSelected;
+       
         public string Nom { get; set; }
         public string Categorie { get; set; }
         public double Prix { get; set; }
         public string CheminImage { get; set; }
 
         public string NomFournisseur { get; set; }
+
+
         public bool IsSelected
         {
-            get => isSelected;
+            get
+            {
+                return isSelected;
+            }
+
             set
             {
                 if (isSelected != value)
@@ -31,14 +37,10 @@ namespace MatISN
                 }
             }
         }
-
         
-
        
-
-
-
-
+        
+       
         public int Quantite
         {
             get { return quantite; }
@@ -69,7 +71,7 @@ namespace MatISN
         {
             get { 
 
-                    if(isSelected)
+                    if(IsSelected)
                     {
                         return Quantite * Prix;
                     }
@@ -82,15 +84,25 @@ namespace MatISN
             
         }
 
+      
+
         public override int Create()
         {
             Sql = "";
             return base.Create();
         }
 
+        public override int Delete()
+        {
+            Sql = "";
+            return base.Delete();
+        }
 
-
-
+        public override int Update()
+        {
+            Sql = "";
+            return base.Update();
+        }
 
 
     }
