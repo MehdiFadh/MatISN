@@ -353,7 +353,7 @@
                         x:Name="butFiltreCategorie"
                         Width="200"
                         Margin="10,0"
-                        Loaded="FiltreCategorie_Loaded" />
+                        Loaded="FiltreCategorie_Loaded"/>
                     <Button Click="butFiltre_Click" Content="Filtrer" />
 
 

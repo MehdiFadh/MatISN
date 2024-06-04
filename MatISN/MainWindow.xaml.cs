@@ -73,7 +73,7 @@ namespace MatISN
 
             Materiels = new List<Materiel>
             {
-                new Materiel { Nom = "Casque", Categorie = "Protection", Prix = 120.0, CheminImage = "img\\Casque_de_pompier.jpg", Quantite = 1},
+                new Materiel { Nom = "Casque",NomFournisseur = "SOMATICO", Categorie = "Protection", Prix = 120.0, CheminImage = "img\\Casque_de_pompier.jpg", Quantite = 1},
                 new Materiel { Nom = "Hache", Categorie = "Outils", Prix = 50.0, CheminImage = "img\\Hache.jpg" , Quantite = 1},
                 new Materiel { Nom = "Extincteur", Categorie = "Équipement", Prix = 80.0, CheminImage = "img\\Extincteur.jpg", Quantite = 1},
                 new Materiel { Nom = "Lance à eau", Categorie = "Outils", Prix = 120.0, CheminImage = "img\\lance_a_eau.png", Quantite = 1},
