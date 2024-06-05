@@ -10,8 +10,12 @@ namespace MatISN
     {
         string nom;
         string ville;
-        int cp;
-        int telephone;
+        string cp;
+        string rue;
+        string telephone;
+       
+
+
 
 
 
