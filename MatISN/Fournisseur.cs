@@ -6,7 +6,24 @@ using System.Threading.Tasks;
 
 namespace MatISN
 {
-    internal class Fournisseur
+    public class Fournisseur
     {
-    }
+		private int numFournisseur;
+
+		public int NumFournisseur
+		{
+			get { return this.numFournisseur; }
+			set { this.numFournisseur = value; }
+		}
+
+		private string nomFournisseur;
+
+		public string NomFournisseur
+		{
+			get { return this.nomFournisseur; }
+			set { this.nomFournisseur = value; }
+		}
+
+
+	}
 }
