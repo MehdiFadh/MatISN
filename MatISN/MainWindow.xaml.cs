@@ -74,14 +74,14 @@ namespace MatISN
 
             Materiels = new List<Materiel>
             {
-                new Materiel { Nom = "Casque", NomFournisseur = "GGGG", Categorie = "Protection", Prix = 120.0, CheminImage = "img\\Casque_de_pompier.jpg", Quantite = 1},
-                new Materiel { Nom = "Hache", NomFournisseur = "GGGG", Categorie = "Outils", Prix = 50.0, CheminImage = "img\\Hache.jpg" , Quantite = 1},
-                new Materiel { Nom = "Extincteur", NomFournisseur = "GGGG", Categorie = "Équipement", Prix = 80.0, CheminImage = "img\\Extincteur.jpg", Quantite = 1},
-                new Materiel { Nom = "Lance à eau", NomFournisseur = "GGGG", Categorie = "Outils", Prix = 120.0, CheminImage = "img\\lance_a_eau.png", Quantite = 1},
-                new Materiel { Nom = "Botte", NomFournisseur = "GGGG", Categorie = "Protection", Prix = 50.0, CheminImage = "img\\botte_pompier.jpg", Quantite = 1},
-                new Materiel { Nom = "Veste", NomFournisseur = "GGGG", Categorie = "Protection", Prix = 80.0, CheminImage = "img\\veste_pompier.jpg", Quantite = 1},
-                new Materiel { Nom = "Corde", NomFournisseur = "GGGG", Categorie = "Outils", Prix = 50.0, CheminImage = "img\\corde.jpg" , Quantite = 1},
-                new Materiel { Nom = "Extincteur", NomFournisseur = "GGGG", Categorie = "Outils", Prix = 80.0, CheminImage = "img\\tuyau.jpg", Quantite = 1},
+                new Materiel { Nom = "Casque", NomFournisseur = "GGGG", Categorie = "Protection", Prix = 120.0, LienPhoto = "img\\Casque_de_pompier.jpg", Quantite = 1},
+                new Materiel { Nom = "Hache", NomFournisseur = "GGGG", Categorie = "Outils", Prix = 50.0, LienPhoto = "img\\Hache.jpg" , Quantite = 1},
+                new Materiel { Nom = "Extincteur", NomFournisseur = "GGGG", Categorie = "Équipement", Prix = 80.0, LienPhoto = "img\\Extincteur.jpg", Quantite = 1},
+                new Materiel { Nom = "Lance à eau", NomFournisseur = "GGGG", Categorie = "Outils", Prix = 120.0, LienPhoto = "img\\lance_a_eau.png", Quantite = 1},
+                new Materiel { Nom = "Botte", NomFournisseur = "GGGG", Categorie = "Protection", Prix = 50.0, LienPhoto = "img\\botte_pompier.jpg", Quantite = 1},
+                new Materiel { Nom = "Veste", NomFournisseur = "GGGG", Categorie = "Protection", Prix = 80.0, LienPhoto = "img\\veste_pompier.jpg", Quantite = 1},
+                new Materiel { Nom = "Corde", NomFournisseur = "GGGG", Categorie = "Outils", Prix = 50.0, LienPhoto = "img\\corde.jpg" , Quantite = 1},
+                new Materiel { Nom = "Extincteur", NomFournisseur = "GGGG", Categorie = "Outils", Prix = 80.0, LienPhoto = "img\\tuyau.jpg", Quantite = 1},
                 
             };
 

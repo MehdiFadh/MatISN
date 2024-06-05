@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace MatISN
 {
-    internal class DetailCommande
+    public class DetailCommande : Table
     {
 
 		private int numCommande;
@@ -30,7 +30,11 @@ namespace MatISN
 		public int Quantite
 		{
 			get { return this.quantite; }
-			set { this.quantite = value; }
+			set { if(value < 1 || value > 100)
+				{
+					throw new ArgumentOutOfRangeException("La quantite doit être compris entre 1 et 100");
+				}
+				this.quantite = value; }
 		}
 
 

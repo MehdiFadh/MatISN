@@ -14,10 +14,81 @@ namespace MatISN
        
         public string Nom { get; set; }
         public string Categorie { get; set; }
-        public double Prix { get; set; }
-        public string CheminImage { get; set; }
+
+
+        //PRIX
+        private double prix;
+        public double Prix
+        {
+            get { return this.prix; }
+            set { this.prix = value; }
+        }
+
+       
 
         public string NomFournisseur { get; set; }
+
+
+        private int numMateriel;
+
+        public int NumMateriel
+        {
+            get { return this.numMateriel; }
+            set { this.numMateriel = value; }
+        }
+
+
+        private int numFournisseur;
+
+        public int NumFournisseur
+        {
+            get { return this.numFournisseur; }
+            set { this.numFournisseur = value; }
+        }
+
+
+        private string codeType;
+
+        public string CodeType
+        {
+            get { return this.codeType; }
+            set { this.codeType = value; }
+        }
+
+
+        private string descriptionMateriel;
+
+        public string DescriptionMateriel
+        {
+            get { return this.descriptionMateriel; }
+            set { this.descriptionMateriel = value; }
+        }
+
+
+        private string lienPhoto;
+
+        public string LienPhoto
+        {
+            get { return this.lienPhoto; }
+            set { this.lienPhoto = value; }
+        }
+
+        private string marque;
+
+        public string Marque
+        {
+            get { return this.marque; }
+            set { this.marque = value; }
+        }
+
+        private string description;
+
+        public string Description
+        {
+            get { return this.description; }
+            set { this.description = value; }
+        }
+
 
 
         public bool IsSelected

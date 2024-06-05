@@ -215,7 +215,7 @@
             x:Name="GridSuivieDemande"
             Grid.Column="1"
             Background="#E0E0E0"
-            Visibility="Visible">
+            Visibility="Collapsed">
             <StackPanel Grid.Column="1" Margin="10">
                 <TextBlock
                     Margin="0,0,0,10"
@@ -232,9 +232,9 @@
                         x:Name="textMotClefSuivie"
                         Width="200"
                         Margin="220,0,10,0"
-                        TextChanged="textMotClef_TextChanged"
                         HorizontalAlignment="Right"
-                        VerticalAlignment="Center" />
+                        VerticalAlignment="Center"
+                        TextChanged="textMotClef_TextChanged" />
                 </DockPanel>
 
                 <DataGrid
@@ -341,7 +341,7 @@
             x:Name="GridListeMateriel"
             Grid.Column="1"
             Background="#E0E0E0"
-            Visibility="Collapsed">
+            Visibility="Visible">
             <StackPanel>
                 <TextBlock
                     HorizontalAlignment="Center"
@@ -354,7 +354,7 @@
                         x:Name="butFiltreCategorie"
                         Width="200"
                         Margin="10,0"
-                        Loaded="FiltreCategorie_Loaded"/>
+                        Loaded="FiltreCategorie_Loaded" />
                     <Button Click="butFiltre_Click" Content="Filtrer" />
 
 
@@ -383,21 +383,31 @@
                                         Width="70"
                                         Height="70"
                                         Margin="5"
-                                        Source="{Binding CheminImage}" />
+                                        VerticalAlignment="Center"
+                                        Source="{Binding LienPhoto}" />
                                     <TextBlock
                                         Width="80"
                                         Margin="5"
+                                        VerticalAlignment="Center"
                                         Text="{Binding Nom}" />
-                                    <TextBlock Width="100" Text="{Binding NomFournisseur}" />
+                                    <TextBlock
+                                        Width="100"
+                                        VerticalAlignment="Center"
+                                        Text="{Binding NomFournisseur}" />
                                     <TextBlock
                                         Width="100"
                                         Margin="5"
+                                        VerticalAlignment="Center"
                                         Text="{Binding Categorie}" />
                                     <TextBlock
                                         Width="50"
                                         Margin="5"
+                                        VerticalAlignment="Center"
                                         Text="{Binding Prix, StringFormat=C}" />
-                                    <CheckBox Margin="5" IsChecked="{Binding IsSelected, Mode=TwoWay}" />
+                                    <CheckBox
+                                        Margin="5"
+                                        VerticalAlignment="Center"
+                                        IsChecked="{Binding IsSelected, Mode=TwoWay}" />
                                     <TextBlock
                                         Margin="5"
                                         VerticalAlignment="Center"
@@ -405,6 +415,7 @@
                                     <TextBox
                                         Width="50"
                                         Margin="5"
+                                        VerticalAlignment="Center"
                                         Text="{Binding Quantite, Mode=TwoWay}" />
                                 </StackPanel>
                             </DataTemplate>

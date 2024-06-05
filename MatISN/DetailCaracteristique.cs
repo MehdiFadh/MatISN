@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace MatISN
 {
-    internal class DetailCaracteristique
+    public class DetailCaracteristique : Table
     {
 
 		private int numMateriel;
@@ -14,12 +14,7 @@ namespace MatISN
 		public int NumMateriel
         {
 			get { return this.numMateriel; }
-			set { if(value == null)
-				{
-					throw new ArgumentNullException("Le numéro matériel est nul");
-				}
-				
-				this.numMateriel = value; }
+			set { this.numMateriel = value; }
 		}
 
 
@@ -28,12 +23,7 @@ namespace MatISN
 		public int NumCaracteristique
 		{
 			get { return numCaracteristique; }
-			set {  if (value == null)
-                {
-                    throw new ArgumentNullException("Le numéro matériel est nul");
-                }
-
-                numCaracteristique = value; }
+			set { numCaracteristique = value; }
 		}
 
 		private string valeur;
