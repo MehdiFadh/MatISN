@@ -8,9 +8,8 @@ namespace MatISN
 {
     public class Commande : Table
     {
-
-
-
+        DateTime dateCommande;
+        DateTime dateLivraison;
 
 
 
