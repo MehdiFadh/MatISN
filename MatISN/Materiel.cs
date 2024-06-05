@@ -24,7 +24,21 @@ namespace MatISN
             set { this.prix = value; }
         }
 
-       
+        public Materiel(int numMateriel, int numFournisseur, string codeType, string descriptionMateriel, string lienPhoto, string marque, string description, double prix)
+        {
+            NumMateriel = numMateriel;
+            NumFournisseur = numFournisseur;
+            CodeType = codeType;
+            DescriptionMateriel = descriptionMateriel;
+            LienPhoto = lienPhoto;
+            Marque = marque;
+            Description = description;
+            Prix = prix;
+        }
+
+        public Materiel()
+        {
+        }
 
         public string NomFournisseur { get; set; }
 
@@ -125,6 +139,10 @@ namespace MatISN
 
             }
         }
+
+
+
+
 
 
         public event PropertyChangedEventHandler PropertyChanged;

@@ -12,9 +12,12 @@
     MinHeight="670"
     WindowStartupLocation="CenterScreen"
     mc:Ignorable="d">
+
+    <Window.DataContext>
+        <local:Materiel x:Name="nouveauMateriel"/>
+    </Window.DataContext>
+
     <Grid Background="White">
-
-
 
         <Grid.ColumnDefinitions>
             <ColumnDefinition Width="21*" />
@@ -375,7 +378,7 @@
                     Margin="0,10,0,0"
                     VerticalScrollBarVisibility="Auto">
 
-                    <ListBox x:Name="EquipmentList" SelectionMode="Multiple">
+                    <ListBox x:Name="EquipmentList" SelectionMode="Multiple" ItemsSource="{Binding LesMateriels}">
                         <ListBox.ItemTemplate>
                             <DataTemplate>
                                 <StackPanel Margin="5" Orientation="Horizontal">

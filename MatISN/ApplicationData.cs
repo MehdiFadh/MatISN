@@ -12,7 +12,24 @@ namespace MatISN
 {
     public class ApplicationData
     {
-        private NpgsqlConnection connexion = null;
+
+        private ObservableCollection<Materiel> lesMaterieux;
+        private NpgsqlConnection connexion = null;   // futur lien à la BD
+
+
+        public ObservableCollection<Materiel> LesMaterieux
+        {
+            get
+            {
+                return LesMaterieux;
+            }
+
+            set
+            {
+                LesMaterieux = value;
+            }
+        }
+
 
 
         public NpgsqlConnection Connexion
@@ -58,8 +75,8 @@ namespace MatISN
 
         public int Read()
         {
-
-            String sql = "";
+            LesMaterieux = new ObservableCollection<Materiel>();
+            String sql = "SELECT NUM_MATERIEL, NUM_FOURNISSEUR,CODE_TYPE,DESCRIPTION_MATERIEL,LIEN_PHOTO,MARQUE,DESCRIPTION,PRIX FROM MATERIEL";
             try
             {
                 NpgsqlDataAdapter dataAdapter = new NpgsqlDataAdapter(sql, Connexion);
@@ -67,7 +84,11 @@ namespace MatISN
                 dataAdapter.Fill(dataTable);
                 foreach (DataRow res in dataTable.Rows)
                 {
-
+                    Materiel nouveau = new Materiel(int.Parse(res["NUM_MATERIEL"].ToString()), int.Parse(res["NUM_FOURNISSEUR"].ToString()),
+                    res["CODE_TYPE"].ToString(), res["DESCRIPTION_MATERIEL"].ToString(),
+                    res["LIEN_PHOTO"].ToString(),
+                    res["MARQUE"].ToString(), res["DESCRIPTION"].ToString(), double.Parse(res["PRIX"].ToString()));
+                    LesMaterieux.Add(nouveau);
                 }
                 return dataTable.Rows.Count;
             }
