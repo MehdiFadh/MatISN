@@ -8,8 +8,8 @@ namespace MatISN
 {
     public class Categorie : Table
     {
-        string nom;
-
+        string nomCategorie;
+        int numCategorie;
 
 
 

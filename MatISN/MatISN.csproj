@@ -28,7 +28,7 @@
   </ItemGroup>
 
   <ItemGroup>
-    <Resource Include="iconPProfil.jpg">
+    <Resource Include="img\iconPProfil.jpg">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Resource>
     <Resource Include="img\botte_pompier.jpg">

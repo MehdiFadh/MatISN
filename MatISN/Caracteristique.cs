@@ -8,7 +8,7 @@ namespace MatISN
 {
     public class Caracteristique : Table
     {
-        string nom;
+        string nomCaracteristique;
 
 
 
