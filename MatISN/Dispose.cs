@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace MatISN
 {
-    public class Dispose
+    public class Dispose : Table
     {
 		private int numMateriel;
 

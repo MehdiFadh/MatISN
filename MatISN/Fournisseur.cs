@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace MatISN
 {
-    public class Fournisseur
+    public class Fournisseur : Table
     {
 		private int numFournisseur;
 
