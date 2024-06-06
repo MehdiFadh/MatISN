@@ -19,6 +19,9 @@ namespace MatISN
     /// </summary>
     public partial class pageConnection : Window
     {
+        public string user = "";
+        public string password = "";
+
         public pageConnection()
         {
             InitializeComponent();
@@ -58,6 +61,8 @@ namespace MatISN
 
         private void butConnection_Click(object sender, RoutedEventArgs e)
         {
+            user = txtLogin.Text;
+           
             DialogResult = true;
         }
 
