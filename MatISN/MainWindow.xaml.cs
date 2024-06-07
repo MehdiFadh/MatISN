@@ -218,7 +218,7 @@ namespace MatISN
         private void Button_Click(object sender, RoutedEventArgs e)
         {
             Commande test =new Commande();
-            test.Create();
+            
         }
     }
 }
