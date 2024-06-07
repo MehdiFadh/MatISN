@@ -96,6 +96,64 @@ namespace MatISN
             { Console.WriteLine("pb de requete : " + e); return 0; }
         }
 
+        public int Create(Commande c)
+        {
+            String sql = $" ";
+            try
+            {
+                NpgsqlCommand cmd = new NpgsqlCommand(sql, Connexion);
+                int nb = cmd.ExecuteNonQuery();
+                return nb;
+                //nb permet de connaître le nb de lignes affectées par un insert, update, delete
+            }
+            catch (Exception sqlE)
+            {
+                Console.WriteLine("pb de requete : " + sql + "" + sqlE);
+                // juste pour le debug : à transformer en MsgBox 
+                return 0;
+            }
+        }
+
+        public int Update(Commande c)
+        {
+            String sql = $"";
+            try
+            {
+                NpgsqlCommand cmd = new NpgsqlCommand(sql, Connexion);
+                int nb = cmd.ExecuteNonQuery();
+                return nb;
+                //nb permet de connaître le nb de lignes affectées par un insert, update, delete
+            }
+            catch (Exception sqlE)
+            {
+                Console.WriteLine("pb de requete : " + sql + "" + sqlE);
+                // juste pour le debug : à transformer en MsgBox 
+                return 0;
+            }
+
+        }
+
+        public int Delete(Commande c)
+        {
+            String sql = $"";
+            try
+            {
+                NpgsqlCommand cmd = new NpgsqlCommand(sql, Connexion);
+                int nb = cmd.ExecuteNonQuery();
+                return nb;
+                //nb permet de connaître le nb de lignes affectées par un insert, update, delete
+            }
+            catch (Exception sqlE)
+            {
+                Console.WriteLine("pb de requete : " + sql + "" + sqlE);
+                // juste pour le debug : à transformer en MsgBox 
+                return 0;
+            }
+
+        }
+
+
+
         public void DeconnexionBD()
         {
             try
