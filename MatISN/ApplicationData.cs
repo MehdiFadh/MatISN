@@ -13,20 +13,20 @@ namespace MatISN
     public class ApplicationData
     {
 
-        private ObservableCollection<Materiel> lesMaterieux;
+        private ObservableCollection<Materiel> lesMateriels;
         private NpgsqlConnection connexion = null;   // futur lien à la BD
 
 
-        public ObservableCollection<Materiel> LesMaterieux
+        public ObservableCollection<Materiel> LesMateriels
         {
             get
             {
-                return LesMaterieux;
+                return lesMateriels;
             }
 
             set
             {
-                LesMaterieux = value;
+                lesMateriels = value;
             }
         }
 
@@ -58,8 +58,8 @@ namespace MatISN
                 Connexion = new NpgsqlConnection();
                 Connexion.ConnectionString = "Server=srv-peda-new;" +
                                             "port=5433;" +
-                                            "Database=TD3;" +
-                                            "Search Path = SAE204;" +
+                                            "Database=SAE204;" +
+                                            "Search Path =sae201;" +
                                             "uid=ezzamaso;" +
                                             "password=cAATY1;";
                 //à compléter dans les "" 
@@ -75,7 +75,7 @@ namespace MatISN
 
         public int Read()
         {
-            LesMaterieux = new ObservableCollection<Materiel>();
+            LesMateriels = new ObservableCollection<Materiel>();
             String sql = "SELECT NUM_MATERIEL, NUM_FOURNISSEUR,CODE_TYPE,DESCRIPTION_MATERIEL,LIEN_PHOTO,MARQUE,DESCRIPTION,PRIX FROM MATERIEL";
             try
             {
@@ -88,7 +88,7 @@ namespace MatISN
                     res["CODE_TYPE"].ToString(), res["DESCRIPTION_MATERIEL"].ToString(),
                     res["LIEN_PHOTO"].ToString(),
                     res["MARQUE"].ToString(), res["DESCRIPTION"].ToString(), double.Parse(res["PRIX"].ToString()));
-                    LesMaterieux.Add(nouveau);
+                    LesMateriels.Add(nouveau);
                 }
                 return dataTable.Rows.Count;
             }

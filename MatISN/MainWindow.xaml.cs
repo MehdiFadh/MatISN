@@ -23,9 +23,7 @@ namespace MatISN
     /// </summary>
     public partial class MainWindow : Window
     {
-        public List<Materiel> MaterielsSuivie { get; set; }
 
-        private List<Materiel> Materiels;
 
 
         public MainWindow()
@@ -40,21 +38,10 @@ namespace MatISN
             EquipmentList.Items.Filter = ContientMotClef;
             
 
-            MaterielsSuivie = new List<Materiel>
-            {
-                new Materiel { Nom = "Barre Hulligan", Categorie = "Outils", Prix = 128.00 },
-                new Materiel { Nom = "Lance incendie", Categorie = "Outils", Prix = 250.00 },
-                new Materiel { Nom = "Lance incendie", Categorie = "Outils", Prix = 120.00 },
-                new Materiel { Nom = "Hache camp", Categorie = "Outils", Prix = 116.41 },
-                new Materiel { Nom = "Tuyau", Categorie = "Outils", Prix = 220.00 },
-                new Materiel { Nom = "Gants robuste", Categorie = "Vêtements", Prix = 50.00 },
-                new Materiel { Nom = "Couteau pliant", Categorie = "Outils", Prix = 12.00 },
-                
 
-            };
 
             
-            MaterialDataGrid2.ItemsSource = MaterielsSuivie;
+            //MaterialDataGrid2.ItemsSource = ;
 
 
             pageConnection dialogConnection = new pageConnection();
@@ -63,7 +50,7 @@ namespace MatISN
             ChargementEquipement();
             
             MiseJourListe();
-            butFiltreCategorie.ItemsSource = Materiels.Select(e => e.Categorie).Distinct().ToList();
+            //butFiltreCategorie.ItemsSource = EquipmentList.ItemsS.Select(e => e.Categorie).Distinct().ToList();
 
 
         }
@@ -72,22 +59,12 @@ namespace MatISN
         {
             
 
-            Materiels = new List<Materiel>
-            {
-                new Materiel { Nom = "Casque", NomFournisseur = "GGGG", Categorie = "Protection", Prix = 120.0, LienPhoto = "img\\Casque_de_pompier.jpg", Quantite = 1},
-                new Materiel { Nom = "Hache", NomFournisseur = "GGGG", Categorie = "Outils", Prix = 50.0, LienPhoto = "img\\Hache.jpg" , Quantite = 1},
-                new Materiel { Nom = "Extincteur", NomFournisseur = "GGGG", Categorie = "Équipement", Prix = 80.0, LienPhoto = "img\\Extincteur.jpg", Quantite = 1},
-                new Materiel { Nom = "Lance à eau", NomFournisseur = "GGGG", Categorie = "Outils", Prix = 120.0, LienPhoto = "img\\lance_a_eau.png", Quantite = 1},
-                new Materiel { Nom = "Botte", NomFournisseur = "GGGG", Categorie = "Protection", Prix = 50.0, LienPhoto = "img\\botte_pompier.jpg", Quantite = 1},
-                new Materiel { Nom = "Veste", NomFournisseur = "GGGG", Categorie = "Protection", Prix = 80.0, LienPhoto = "img\\veste_pompier.jpg", Quantite = 1},
-                new Materiel { Nom = "Corde", NomFournisseur = "GGGG", Categorie = "Outils", Prix = 50.0, LienPhoto = "img\\corde.jpg" , Quantite = 1},
-                new Materiel { Nom = "Extincteur", NomFournisseur = "GGGG", Categorie = "Outils", Prix = 80.0, LienPhoto = "img\\tuyau.jpg", Quantite = 1},
-                
-            };
 
-            foreach (var materiel in Materiels)
+
+            foreach (var materiel in EquipmentList.Items)
             {
-                materiel.PropertyChanged += EquipementChanger;
+                Materiel unMateriel = materiel as Materiel;
+                unMateriel.PropertyChanged += EquipementChanger;
             }
         }
 
@@ -102,39 +79,37 @@ namespace MatISN
 
         private void MiseJourListe()
         {
-            EquipmentList.ItemsSource = null;
-            EquipmentList.ItemsSource = Materiels;
             ChargeCompteur();
         }
 
         private void ChargeCompteur()
         {
-            int selectedCount = Materiels.Count(e => e.IsSelected);
+            /*int selectedCount = (Material)EquipmentList.Items.Count(e => e.IsSelected);
             SelectedCountText.Text = $"Matériel sélectionné: {selectedCount}";
             int selectedCountSuivie = MaterielsSuivie.Count(e => e.IsSelected);
-            TxtArticlSelect.Text = $"{selectedCountSuivie} Matériel sélectionné";
+            TxtArticlSelect.Text = $"{selectedCountSuivie} Matériel sélectionné";*/
 
         }
 
         private void FiltreCategorie_Loaded(object sender, RoutedEventArgs e)
         {
-            var categories = Materiels.Select(e => e.Categorie).Distinct().ToList();
+            /*var categories = Materiels.Select(e => e.Categorie).Distinct().ToList();
             categories.Insert(0, "Tous"); 
             butFiltreCategorie.ItemsSource = categories;
-            butFiltreCategorie.SelectedIndex = 0; 
+            butFiltreCategorie.SelectedIndex = 0; */
         }
 
         private void butFiltre_Click(object sender, RoutedEventArgs e)
         {
-            string selectedCategory = butFiltreCategorie.SelectedItem as string;
+           /* string selectedCategory = butFiltreCategorie.SelectedItem as string;
             if (selectedCategory == "Tous")
             {
-                EquipmentList.ItemsSource = Materiels;
+                EquipmentList.ItemsSource = EquipmentList.Items;
             }
             else if (!string.IsNullOrEmpty(selectedCategory))
             {
-                EquipmentList.ItemsSource = Materiels.Where(e => e.Categorie == selectedCategory).ToList();
-            }
+                EquipmentList.ItemsSource = EquipmentList.Items.(e => e.Categorie == selectedCategory).ToList();
+            }*/
         }
 
         private void textMotClef_TextChanged(object sender, TextChangedEventArgs e)
@@ -198,22 +173,22 @@ namespace MatISN
 
         public void ChargePrixTotal()
         {
-            double PrixTotal = Materiels.Where(e => e.IsSelected).Sum(e => e.PrixTotal);
-            txtPrixTotal.Text = $"Prix total : {PrixTotal:C}";
+            /*double PrixTotal = Materiels.Where(e => e.IsSelected).Sum(e => e.PrixTotal);
+            txtPrixTotal.Text = $"Prix total : {PrixTotal:C}";*/
         }
 
         private void SelectionSuivie(object sender, PropertyChangedEventArgs e)
         {
-            int selectedCountSuivie = MaterielsSuivie.Count(e => e.IsSelected);
-            TxtArticlSelect.Text = $"{selectedCountSuivie} articles sélectionné";
+           /* int selectedCountSuivie = MaterielsSuivie.Count(e => e.IsSelected);
+            TxtArticlSelect.Text = $"{selectedCountSuivie} articles sélectionné";*/
         }
 
         private void DateLivraison_Click(object sender, RoutedEventArgs e)
         {
-            MaterialDataGridDateLivraison.ItemsSource = MaterielsSuivie.Where(e => e.IsSelected);
+            /*MaterialDataGridDateLivraison.ItemsSource = MaterielsSuivie.Where(e => e.IsSelected);
 
             GridSuivieDemande.Visibility = Visibility.Collapsed;
-            GridDateLivraison.Visibility = Visibility.Visible;
+            GridDateLivraison.Visibility = Visibility.Visible;*/
         }
 
         private void AnnulerLivraison_Click(object sender, RoutedEventArgs e)
