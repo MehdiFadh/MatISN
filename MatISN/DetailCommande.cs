@@ -9,21 +9,7 @@ namespace MatISN
     public class DetailCommande
     {
 
-		private int numCommande;
-
-		public int NumCommande
-		{
-			get { return this.numCommande; }
-			set { this.numCommande = value; }
-		}
-
-		private int numMatriel;
-
-		public int NumMateriel
-		{
-			get { return this.numMatriel; }
-			set { this.numMatriel = value; }
-		}
+		private Materiel unMatriel;
 
 		private int quantite;
 
@@ -37,6 +23,17 @@ namespace MatISN
 				this.quantite = value; }
 		}
 
+        public Materiel UnMatriel
+        {
+            get
+            {
+                return unMatriel;
+            }
 
-	}
+            set
+            {
+                unMatriel = value;
+            }
+        }
+    }
 }

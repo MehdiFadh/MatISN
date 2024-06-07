@@ -9,24 +9,8 @@ namespace MatISN
     public class DetailCaracteristique
     {
 
-		private int numMateriel;
-
-		public int NumMateriel
-        {
-			get { return this.numMateriel; }
-			set { this.numMateriel = value; }
-		}
-
-
-		private int numCaracteristique;
-
-		public int NumCaracteristique
-		{
-			get { return numCaracteristique; }
-			set { numCaracteristique = value; }
-		}
-
-		private string valeur;
+        private Caracteristique uneCaracteristique;
+        private string valeur;
 
 		public string Valeur
 		{
@@ -34,6 +18,17 @@ namespace MatISN
 			set {this.valeur = value; }
 		}
 
+        public Caracteristique UneCaracteristique
+        {
+            get
+            {
+                return uneCaracteristique;
+            }
 
-	}
+            set
+            {
+                uneCaracteristique = value;
+            }
+        }
+    }
 }
