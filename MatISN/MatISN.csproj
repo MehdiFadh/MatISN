@@ -39,7 +39,7 @@
     <Resource Include="lance_a_eau.png">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Resource>
-    <Resource Include="OIG1.ico">
+    <Resource Include="img\OIG1.ico">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Resource>
     <Resource Include="tuyau.jpg">
