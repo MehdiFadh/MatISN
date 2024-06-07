@@ -6,33 +6,10 @@ using System.Threading.Tasks;
 
 namespace MatISN
 {
-    public class Categorie : Table
+    public class Categorie
     {
         string nomCategorie;
         int numCategorie;
-
-
-
-
-
-
-        public override int Create()
-        {
-            Sql = "";
-            return base.Create();
-        }
-
-        public override int Delete()
-        {
-            Sql = "";
-            return base.Delete();
-        }
-
-        public override int Update()
-        {
-            Sql = "";
-            return base.Update();
-        }
 
 
     }

@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace MatISN
 {
-    public class DetailCommande : Table
+    public class DetailCommande
     {
 
 		private int numCommande;

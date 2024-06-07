@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace MatISN
 {
-    public class DetailCaracteristique : Table
+    public class DetailCaracteristique
     {
 
 		private int numMateriel;

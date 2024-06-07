@@ -7,7 +7,7 @@ using System.Windows.Documents;
 
 namespace MatISN
 {
-    public class Caserne : Table
+    public class Caserne
     {
         string nom;
         string ville;
@@ -16,28 +16,6 @@ namespace MatISN
         string telephone; 
        
       
-      
-
-
-
-        public override int Create()
-        {
-            Sql = "";
-            return base.Create();
-        }
-
-        public override int Delete()
-        {
-            Sql = "";
-            return base.Delete();
-        }
-
-        public override int Update()
-        {
-            Sql = "";
-            return base.Update();
-        }
-
 
     }
 }

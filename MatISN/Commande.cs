@@ -6,32 +6,10 @@ using System.Threading.Tasks;
 
 namespace MatISN
 {
-    public class Commande : Table
+    public class Commande
     {
         DateTime dateCommande;
         DateTime dateLivraison;
-
-
-
-        public override int Create()
-        {
-            Sql = "";
-            return base.Create();
-        }
-
-        public override int Delete()
-        {
-            Sql = "";
-            return base.Delete();
-        }
-
-        public override int Update()
-        {
-            Sql = "";
-            return base.Update();
-        }
-
-
 
 
     }
