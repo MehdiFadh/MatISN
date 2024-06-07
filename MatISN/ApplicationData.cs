@@ -98,7 +98,7 @@ namespace MatISN
 
         public int Create(Commande c)
         {
-            String sql = $" ";
+            String sql = $"insert into commande(num_transport,num_caserne,date_commande,date_livraison) values(1,1,'20/04/2005','20/06/2005')";
             try
             {
                 NpgsqlCommand cmd = new NpgsqlCommand(sql, Connexion);

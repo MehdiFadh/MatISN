@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Collections.ObjectModel;
 using System.ComponentModel;
 using System.Linq;
+using System.Runtime.InteropServices;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows;
@@ -214,8 +215,10 @@ namespace MatISN
                 || unMateriel.Categorie.StartsWith(textMotClefSuivie.Text, StringComparison.OrdinalIgnoreCase));
         }
 
-
-        
-
+        private void Button_Click(object sender, RoutedEventArgs e)
+        {
+            Commande test =new Commande();
+            test.Create();
+        }
     }
 }

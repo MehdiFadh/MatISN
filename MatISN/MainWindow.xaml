@@ -494,7 +494,7 @@
                     HorizontalAlignment="Right"
                     Background="#FF363740"
                     Content="Faire la demande"
-                    Foreground="White">
+                    Foreground="White" Click="Button_Click">
                     <Button.Resources>
                         <Style TargetType="{x:Type Border}">
                             <Setter Property="CornerRadius" Value="10" />

@@ -9,17 +9,7 @@
   </PropertyGroup>
 
   <ItemGroup>
-    <None Remove="iconPProfil.jpg" />
     <None Remove="iconProfil.jpg" />
-    <None Remove="img\botte_pompier.jpg" />
-    <None Remove="img\Casque_de_pompier.jpg" />
-    <None Remove="img\corde.jpg" />
-    <None Remove="img\Extincteur.jpg" />
-    <None Remove="img\Hache.jpg" />
-    <None Remove="img\lance_a_eau.png" />
-    <None Remove="img\OIG1.ico" />
-    <None Remove="img\tuyau.jpg" />
-    <None Remove="img\veste_pompier.jpg" />
   </ItemGroup>
 
   <ItemGroup>
@@ -28,51 +18,36 @@
   </ItemGroup>
 
   <ItemGroup>
-    <Resource Include="img\iconPProfil.jpg">
+    <Resource Include="iconPProfil.jpg">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Resource>
-    <Resource Include="img\botte_pompier.jpg">
+    <Resource Include="botte_pompier.jpg">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Resource>
-    <Resource Include="img\Casque_de_pompier.jpg">
+    <Resource Include="Casque_de_pompier.jpg">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Resource>
-    <Resource Include="img\corde.jpg">
+    <Resource Include="corde.jpg">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Resource>
-    <Resource Include="img\Extincteur.jpg">
+    <Resource Include="Extincteur.jpg">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Resource>
-    <Resource Include="img\Hache.jpg">
+    <Resource Include="Hache.jpg">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Resource>
-    <Resource Include="img\lance_a_eau.png">
+    <Resource Include="lance_a_eau.png">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Resource>
-    <Resource Include="img\OIG1.ico">
+    <Resource Include="OIG1.ico">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Resource>
-    <Resource Include="img\tuyau.jpg">
+    <Resource Include="tuyau.jpg">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Resource>
-    <Resource Include="img\veste_pompier.jpg">
+    <Resource Include="veste_pompier.jpg">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Resource>
-  </ItemGroup>
-
-  <ItemGroup>
-    <None Update="img\2318271-icone-de-profil-utilisateur-vectoriel.jpg">
-      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
-    </None>
-    <None Update="img\iconProfil.jpg">
-      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
-    </None>
-    <None Update="img\iconProfil.png">
-      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
-    </None>
-    <None Update="img\OIG1.jpeg">
-      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
-    </None>
   </ItemGroup>
 
 </Project>
