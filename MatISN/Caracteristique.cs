@@ -8,8 +8,19 @@ namespace MatISN
 {
     public class Caracteristique
     {
-        string nomCaracteristique;
+        private string nomCaracteristique;
 
+        public string NomCaracteristique
+        {
+            get
+            {
+                return nomCaracteristique;
+            }
 
+            set
+            {
+                nomCaracteristique = value;
+            }
+        }
     }
 }

@@ -8,13 +8,6 @@ namespace MatISN
 {
     public class Fournisseur
     {
-		private int numFournisseur;
-
-		public int NumFournisseur
-		{
-			get { return this.numFournisseur; }
-			set { this.numFournisseur = value; }
-		}
 
 		private string nomFournisseur;
 

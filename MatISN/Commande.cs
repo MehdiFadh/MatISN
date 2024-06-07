@@ -8,9 +8,33 @@ namespace MatISN
 {
     public class Commande
     {
-        DateTime dateCommande;
-        DateTime dateLivraison;
+        private DateTime dateCommande;
+        private DateTime dateLivraison;
 
+        public DateTime DateCommande
+        {
+            get
+            {
+                return dateCommande;
+            }
 
+            set
+            {
+                dateCommande = value;
+            }
+        }
+
+        public DateTime DateLivraison
+        {
+            get
+            {
+                return dateLivraison;
+            }
+
+            set
+            {
+                dateLivraison = value;
+            }
+        }
     }
 }

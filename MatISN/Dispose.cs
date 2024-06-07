@@ -8,13 +8,7 @@ namespace MatISN
 {
     public class Dispose
     {
-		private int numMateriel;
-
-		public int NumMateriel
-		{
-			get { return this.numMateriel; }
-			set { this.numMateriel = value; }
-		}
+		private Materiel unMateriel;
 
 		private string nomHabilitation;
 

@@ -8,9 +8,19 @@ namespace MatISN
 {
     public class Categorie
     {
-        string nomCategorie;
-        int numCategorie;
+        private string nomCategorie;
 
+        public string NomCategorie
+        {
+            get
+            {
+                return nomCategorie;
+            }
 
+            set
+            {
+                nomCategorie = value;
+            }
+        }
     }
 }
