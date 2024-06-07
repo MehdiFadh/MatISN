@@ -6,26 +6,8 @@ using System.Threading.Tasks;
 
 namespace MatISN
 {
-    public class type_materiel : Table
+    public class type_materiel
     {
-        
 
-        public override int Create()
-        {
-            Sql = "";
-            return base.Create();
-        }
-
-        public override int Delete()
-        {
-            Sql = "";
-            return base.Delete();
-        }
-
-        public override int Update()
-        {
-            Sql = "";
-            return base.Update();
-        }
     }
 }
