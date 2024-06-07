@@ -62,7 +62,7 @@ namespace MatISN
         private void butConnection_Click(object sender, RoutedEventArgs e)
         {
             user = txtLogin.Text;
-           
+            password = txtMDP.Password.ToString();
             DialogResult = true;
         }
 
