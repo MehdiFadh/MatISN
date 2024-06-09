@@ -1,0 +1,67 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<ClassDiagram MajorVersion="1" MinorVersion="1">
+  <Class Name="MatISN.Caserne">
+    <Position X="2.5" Y="0.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAgAAAAAAAgAAAAAQIAAAECAAAAAAAYAAAACCAAI=</HashCode>
+      <FileName>Caserne.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="MatISN.Caracteristique">
+    <Position X="4.25" Y="0.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAIAAAAAAAAAAAAAAAIAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Caracteristique.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="MatISN.DetailCaracteristique">
+    <Position X="4.25" Y="2.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAgAAAAAAAAAIAAAACAAAAACAAAAAAAA=</HashCode>
+      <FileName>DetailCaracteristique.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="MatISN.DetailCommande">
+    <Position X="10" Y="0.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAQAAAAEAAAAAAAAAAAAAAgAAAAIAAAAAAA=</HashCode>
+      <FileName>DetailCommande.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="MatISN.Dispose">
+    <Position X="6" Y="0.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAEAAAACAAAAAgAAAAEAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Dispose.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="MatISN.Fournisseur">
+    <Position X="8" Y="0.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAgAAAAAAAAAgAAAAAgAAAAAAgAAAAAAAAAAAACAAA=</HashCode>
+      <FileName>Fournisseur.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="MatISN.Materiel">
+    <Position X="0.5" Y="0.5" Width="1.75" />
+    <TypeIdentifier>
+      <HashCode>AEAgAAAQAgAgEAEgKAABAQAMoiAABAgAAQAIAQFAAAA=</HashCode>
+      <FileName>Materiel.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="MatISN.Mode_transport">
+    <Position X="6" Y="2.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAACAAgAAAAAAAAAAAAAAAAAAAAgAAIACAAAAA=</HashCode>
+      <FileName>Mode_transport.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="MatISN.type_materiel">
+    <Position X="8" Y="3.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAEAAAABAACAAA=</HashCode>
+      <FileName>type_materiel.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Font Name="Segoe UI" Size="9" />
+</ClassDiagram>
