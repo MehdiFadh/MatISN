@@ -19,9 +19,9 @@ namespace MatISN
     /// </summary>
     public partial class pageConnection : Window
     {
-        public string user = "";
-        public string password = "";
-
+        public static string user;
+        public static string password;
+        
         public pageConnection()
         {
             InitializeComponent();

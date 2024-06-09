@@ -9,6 +9,8 @@ namespace MatISN
 {
     public class Caserne
     {
+        private static int ajoutCaserne;
+        private int numCaserne;
         private string nom;
         private string ville;
         private string cp;
@@ -78,6 +80,25 @@ namespace MatISN
             {
                 telephone = value;
             }
+        }
+
+        public int NumCaserne
+        {
+            get
+            {
+                return numCaserne;
+            }
+
+            set
+            {
+                numCaserne = value;
+            }
+        }
+
+        public Caserne()
+        {
+            this.numCaserne = ajoutCaserne;
+            ajoutCaserne++;
         }
     }
 }

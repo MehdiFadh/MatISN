@@ -8,8 +8,11 @@ namespace MatISN
 {
     public class Fournisseur
     {
+		private static int ajoutFournisseur;
 
-		private string nomFournisseur;
+        private int numFournisseur;
+
+        private string nomFournisseur;
 
 		public string NomFournisseur
 		{
@@ -17,6 +20,26 @@ namespace MatISN
 			set { this.nomFournisseur = value; }
 		}
 
+        public int NumFournisseur
+        {
+            get
+            {
+                return numFournisseur;
+            }
+
+            set
+            {
+                numFournisseur = value;
+            }
+        }
+
+        public Fournisseur()
+		{
+            this.NumFournisseur = ajoutFournisseur;
+            ajoutFournisseur++;
+
+
+        }
 
 	}
 }

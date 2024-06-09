@@ -24,6 +24,17 @@ namespace MatISN
 				this.nomHabilitation = value; }
 		}
 
+        public Materiel UnMateriel
+        {
+            get
+            {
+                return unMateriel;
+            }
 
-	}
+            set
+            {
+                unMateriel = value;
+            }
+        }
+    }
 }

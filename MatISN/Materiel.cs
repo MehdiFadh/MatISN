@@ -24,11 +24,11 @@ namespace MatISN
             set { this.prix = value; }
         }
 
-        public Materiel(int numMateriel, int numFournisseur, string codeType, string descriptionMateriel, string lienPhoto, string marque, string description, double prix)
+        public Materiel(int numMateriel, Fournisseur unFournisseur, type_materiel untypeMateriel, string descriptionMateriel, string lienPhoto, string marque, string description, double prix)
         {
             NumMateriel = numMateriel;
-            NumFournisseur = numFournisseur;
-            CodeType = codeType;
+            UnFournisseur = unFournisseur;
+            UntypeMateriel = untypeMateriel;
             DescriptionMateriel = descriptionMateriel;
             LienPhoto = lienPhoto;
             Marque = marque;
@@ -52,22 +52,12 @@ namespace MatISN
         }
 
 
-        private int numFournisseur;
-
-        public int NumFournisseur
-        {
-            get { return this.numFournisseur; }
-            set { this.numFournisseur = value; }
-        }
+        private Fournisseur unFournisseur;
 
 
-        private string codeType;
 
-        public string CodeType
-        {
-            get { return this.codeType; }
-            set { this.codeType = value; }
-        }
+        private type_materiel untypeMateriel;
+
 
 
         private string descriptionMateriel;
@@ -171,8 +161,32 @@ namespace MatISN
                 }
             
         }
-        
 
+        public Fournisseur UnFournisseur
+        {
+            get
+            {
+                return unFournisseur;
+            }
+
+            set
+            {
+                unFournisseur = value;
+            }
+        }
+
+        public type_materiel UntypeMateriel
+        {
+            get
+            {
+                return untypeMateriel;
+            }
+
+            set
+            {
+                untypeMateriel = value;
+            }
+        }
     }
 
 

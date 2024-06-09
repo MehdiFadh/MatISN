@@ -24,8 +24,9 @@ namespace MatISN
     /// </summary>
     public partial class MainWindow : Window
     {
-
-
+        public Commande commandeSelect;
+        public ObservableCollection<Material> materialList;
+        public ObservableCollection<Commande> commandeList;
 
         public MainWindow()
         {
@@ -51,7 +52,7 @@ namespace MatISN
             ChargementEquipement();
             
             MiseJourListe();
-            //butFiltreCategorie.ItemsSource = EquipmentList.ItemsS.Select(e => e.Categorie).Distinct().ToList();
+            //butFiltreCategorie.ItemsSource = EquipmentList.Items.Select(e => e.Categorie).Distinct().ToList();
 
 
         }
@@ -85,9 +86,10 @@ namespace MatISN
 
         private void ChargeCompteur()
         {
-            /*int selectedCount = (Material)EquipmentList.Items.Count(e => e.IsSelected);
+            /*materialList = EquipmentList.Items;
+            int selectedCount = materialList.Count(e => e.IsSelected);
             SelectedCountText.Text = $"Matériel sélectionné: {selectedCount}";
-            int selectedCountSuivie = MaterielsSuivie.Count(e => e.IsSelected);
+            int selectedCountSuivie = materialList.Count(e => e.IsSelected);
             TxtArticlSelect.Text = $"{selectedCountSuivie} Matériel sélectionné";*/
 
         }
@@ -186,10 +188,9 @@ namespace MatISN
 
         private void DateLivraison_Click(object sender, RoutedEventArgs e)
         {
-            /*MaterialDataGridDateLivraison.ItemsSource = MaterielsSuivie.Where(e => e.IsSelected);
-
+            //commandeSelect = MaterialDataGrid2.Items;
             GridSuivieDemande.Visibility = Visibility.Collapsed;
-            GridDateLivraison.Visibility = Visibility.Visible;*/
+            GridDateLivraison.Visibility = Visibility.Visible;
         }
 
         private void AnnulerLivraison_Click(object sender, RoutedEventArgs e)
@@ -217,7 +218,7 @@ namespace MatISN
 
         private void Button_Click(object sender, RoutedEventArgs e)
         {
-            Commande test =new Commande();
+            Commande test = new Commande();
             data.Create(test);
             
         }

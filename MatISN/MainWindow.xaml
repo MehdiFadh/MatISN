@@ -244,7 +244,7 @@
                     x:Name="MaterialDataGrid2"
                     Margin="0,10,0,10"
                     AutoGenerateColumns="False"
-                    CanUserAddRows="False">
+                    CanUserAddRows="False" ItemsSource="{Binding LesCommandes}">
                     <DataGrid.Columns>
                         <DataGridTemplateColumn Width="50">
                             <DataGridTemplateColumn.Header>
@@ -258,16 +258,16 @@
                         </DataGridTemplateColumn>
                         <DataGridTextColumn
                             Width="*"
-                            Binding="{Binding Nom}"
+                            Binding="{Binding UneCaserne.Nom}"
                             Header="Nom" />
                         <DataGridTextColumn
                             Width="*"
-                            Binding="{Binding Categorie}"
+                            Binding="{Binding UnModeTransport.NomTransport}"
                             Header="Catégorie" />
                         <DataGridTextColumn
                             Width="*"
-                            Binding="{Binding Prix}"
-                            Header="Prix" />
+                            Binding="{Binding DATE_LIVRAISON}"
+                            Header="Date" />
                     </DataGrid.Columns>
                 </DataGrid>
 
@@ -396,12 +396,12 @@
                                     <TextBlock
                                         Width="100"
                                         VerticalAlignment="Center"
-                                        Text="{Binding NomFournisseur}" />
+                                        Text="{Binding UnFournisseur.NomFournisseur}" />
                                     <TextBlock
                                         Width="100"
                                         Margin="5"
                                         VerticalAlignment="Center"
-                                        Text="{Binding CodeType}" />
+                                        Text="{Binding UntypeMateriel.CodeType}" />
                                     <TextBlock
                                         Width="50"
                                         Margin="5"
@@ -524,25 +524,25 @@
                     x:Name="MaterialDataGridDateLivraison"
                     Margin="0,10,0,10"
                     AutoGenerateColumns="False"
-                    CanUserAddRows="False">
+                    CanUserAddRows="False" ItemsSource="{Binding LesCommandes}"/>
                     <DataGrid.Columns>
                         <DataGridTemplateColumn Width="50" />
                         <DataGridTextColumn
-                            Width="*"
-                            Binding="{Binding Nom}"
-                            Header="Nom" />
-                        <DataGridTextColumn
-                            Width="*"
-                            Binding="{Binding Categorie}"
-                            Header="Catégorie" />
-                        <DataGridTextColumn
-                            Width="*"
-                            Binding="{Binding Prix}"
-                            Header="Prix" />
+                        Width="*"
+                        Binding="{Binding UneCaserne.Nom}"
+                        Header="Nom" />
+                    <DataGridTextColumn
+                        Width="*"
+                        Binding="{Binding UnModeTransport.NomTransport}"
+                        Header="Catégorie" />
+                    <DataGridTextColumn
+                        Width="*"
+                        Binding="{Binding DATE_LIVRAISON}"
+                        Header="Date" />
                     </DataGrid.Columns>
-                </DataGrid>
 
-                <DatePicker Margin="0,20,0,0" />
+
+                    <DatePicker Margin="0,20,0,0" />
 
                 <Grid>
                     <Button
