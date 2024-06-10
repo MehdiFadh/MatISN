@@ -12,10 +12,7 @@ namespace MatISN
         private int quantite;
         private bool isSelected;
        
-        public string Nom { get; set; }
-        public string Categorie { get; set; }
-
-
+        
         //PRIX
         private double prix;
         public double Prix
@@ -36,11 +33,37 @@ namespace MatISN
             Prix = prix;
         }
 
+        public Materiel(int numMateriel, string nomFournisseur, string codeType, string descriptionMateriel, string lienPhoto, string marque, string description, double prix)
+        {
+            NumMateriel = numMateriel;
+            NomFournisseur = nomFournisseur;
+            CodeType = codeType;
+            DescriptionMateriel = descriptionMateriel;
+            LienPhoto = lienPhoto;
+            Marque = marque;
+            Description = description;
+            Prix = prix;
+        }
+
         public Materiel()
         {
         }
 
-        public string NomFournisseur { get; set; }
+        private int numFournisseur;
+
+        public int NumFournisseur
+        {
+            get { return numFournisseur; }
+            set { numFournisseur = value; }
+        }
+
+        private string nomFournisseur;
+
+        public string NomFournisseur
+        {
+            get { return nomFournisseur; }
+            set { nomFournisseur = value; }
+        }
 
 
         private int numMateriel;
@@ -93,6 +116,13 @@ namespace MatISN
             set { this.description = value; }
         }
 
+        private string codeType;
+
+        public string CodeType
+        {
+            get { return codeType; }
+            set { codeType = value; }
+        }
 
 
         public bool IsSelected
