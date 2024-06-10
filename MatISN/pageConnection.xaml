@@ -14,7 +14,7 @@
             <Rectangle Height="304" Canvas.Left="195" Canvas.Top="140" Width="510" HorizontalAlignment="Center" VerticalAlignment="Top" Fill="#19000000" RadiusX="0"/>
 
 
-            <TextBox x:Name="txtLogin" Canvas.Left="302" Canvas.Top="232" HorizontalAlignment="Center" VerticalAlignment="Top" Width="300" FontSize="14" TextAlignment="Center" Foreground="#BC000000" LostFocus="AjouterText" GotFocus="EnleverText" Height="20"/>
+            <TextBox x:Name="txtLogin" Canvas.Left="302" Canvas.Top="232" HorizontalAlignment="Center" VerticalAlignment="Top" Width="300" FontSize="14" Height="20"/>
 
             
 

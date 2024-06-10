@@ -33,6 +33,17 @@ namespace MatISN
             ajoutCommande++;
         }
 
+        public Commande( int numTransport, int numCaserne, DateTime dateCommande, DateTime dateLivraison)
+        {
+            DateCommande = dateCommande;
+            DateLivraison = dateLivraison;
+            NumCaserne = numCaserne;
+            numTransport = numTransport;
+
+            
+        }
+
+
         public DateTime DateCommande
         {
             get
@@ -97,6 +108,16 @@ namespace MatISN
                 numCommande = value;
             }
         }
+
+        private int numCaserne;
+
+        public int NumCaserne
+        {
+            get { return numCaserne; }
+            set { numCaserne = value; }
+        }
+
+
 
         public Fournisseur UnFournisseur { get => unFournisseur; set => unFournisseur = value; }
     }

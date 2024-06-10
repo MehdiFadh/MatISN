@@ -24,7 +24,7 @@ namespace MatISN
     /// </summary>
     public partial class MainWindow : Window
     {
-        
+        public ObservableCollection<Materiel> suiviCommande = new ObservableCollection<Materiel>();
 
         public MainWindow()
         {
@@ -39,8 +39,8 @@ namespace MatISN
             AjouterText(txtTelephone, null);
 
             EquipmentList.Items.Filter = ContientMotClef;
-            
 
+            materielSuivie.ItemsSource = suiviCommande;
 
 
             
@@ -57,12 +57,15 @@ namespace MatISN
 
         }
 
+        public ObservableCollection<Materiel> SuivieCommande
+        {
+            get { return suiviCommande; }
+            set { suiviCommande = value; }
+        }
+
         private void ChargementEquipement()
         {
             
-
-
-
             foreach (var materiel in EquipmentList.Items)
             {
                 Materiel unMateriel = materiel as Materiel;
@@ -86,12 +89,15 @@ namespace MatISN
 
         private void ChargeCompteur()
         {
-            /*materialList = EquipmentList.Items;
-            int selectedCount = materialList.Count(e => e.IsSelected);
-            SelectedCountText.Text = $"Matériel sélectionné: {selectedCount}";
-            int selectedCountSuivie = materialList.Count(e => e.IsSelected);
-            TxtArticlSelect.Text = $"{selectedCountSuivie} Matériel sélectionné";*/
-
+            int compteur = 0;
+            foreach (Materiel mat in EquipmentList.Items)
+            {
+                if (mat.IsSelected)
+                {
+                    compteur+=1;
+                }
+            }
+            SelectedCountText.Text = $"Matériel sélectionné : {compteur}";
         }
 
         private void FiltreCategorie_Loaded(object sender, RoutedEventArgs e)
@@ -176,8 +182,16 @@ namespace MatISN
 
         public void ChargePrixTotal()
         {
-            /*double PrixTotal = Materiels.Where(e => e.IsSelected).Sum(e => e.PrixTotal);
-            txtPrixTotal.Text = $"Prix total : {PrixTotal:C}";*/
+            double PrixTotal = 0;
+            foreach (Materiel mat in EquipmentList.ItemsSource)
+            {
+                if (mat.IsSelected)
+                {
+                    SuivieCommande.Add(mat);
+                    PrixTotal += mat.Prix * mat.Quantite;
+                }
+            }
+            txtPrixTotal.Text = $"Prix total : {PrixTotal}";
         }
 
         private void SelectionSuivie(object sender, PropertyChangedEventArgs e)
@@ -208,19 +222,22 @@ namespace MatISN
         private bool ContientMotClef(object obj)
         {
             Materiel unMateriel = obj as Materiel;
-            if (String.IsNullOrEmpty(textMotClef.Text) || String.IsNullOrEmpty(textMotClefSuivie.Text))
+            if (String.IsNullOrEmpty(textMotClef.Text))
                 return true;
             else
-                return (unMateriel.Nom.StartsWith(textMotClef.Text, StringComparison.OrdinalIgnoreCase)
-                || unMateriel.Categorie.StartsWith(textMotClef.Text, StringComparison.OrdinalIgnoreCase)) || (unMateriel.Nom.StartsWith(textMotClefSuivie.Text, StringComparison.OrdinalIgnoreCase)
-                || unMateriel.Categorie.StartsWith(textMotClefSuivie.Text, StringComparison.OrdinalIgnoreCase));
+                return (unMateriel.Marque.StartsWith(textMotClef.Text, StringComparison.OrdinalIgnoreCase)
+                || unMateriel.NomFournisseur.StartsWith(textMotClef.Text, StringComparison.OrdinalIgnoreCase)
+                || unMateriel.DescriptionMateriel.StartsWith(textMotClef.Text, StringComparison.OrdinalIgnoreCase));
         }
 
         private void Button_Click(object sender, RoutedEventArgs e)
         {
-            Commande test = new Commande();
+            DateTime d1 = DateTime.Now;
+            TimeSpan interval = new TimeSpan(30,0,0,0);
+            DateTime d2 = d1 + interval;
+            Commande test = new Commande(1,1,d1,d2);
             data.Create(test);
-            
+
         }
     }
 }
