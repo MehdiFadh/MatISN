@@ -12,6 +12,7 @@ namespace MatISN
         private int numCommande;
         private DateTime dateCommande;
         private DateTime dateLivraison;
+        private Fournisseur unFournisseur;
         private Caserne uneCaserne;
         private Mode_transport unModeTransport;
 
@@ -21,12 +22,13 @@ namespace MatISN
             ajoutCommande++;
         }
 
-        public Commande(DateTime dateCommande, DateTime dateLivraison, Caserne uneCaserne, Mode_transport unModeTransport)
+        public Commande(DateTime dateCommande, DateTime dateLivraison, Caserne uneCaserne, Mode_transport unModeTransport, Fournisseur unFournisseur)
         {
             DateCommande = dateCommande;
             DateLivraison = dateLivraison;
             UneCaserne = uneCaserne;
             UnModeTransport = unModeTransport;
+            UnFournisseur = unFournisseur;
             this.numCommande = ajoutCommande;
             ajoutCommande++;
         }
@@ -95,5 +97,7 @@ namespace MatISN
                 numCommande = value;
             }
         }
+
+        public Fournisseur UnFournisseur { get => unFournisseur; set => unFournisseur = value; }
     }
 }

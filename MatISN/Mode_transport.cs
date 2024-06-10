@@ -38,7 +38,7 @@ namespace MatISN
             }
         }
 
-        public Mode_transport()
+        public Mode_transport(string nomTransport)
         {
             this.numTransport = ajoutModeTransport;
             ajoutModeTransport++;

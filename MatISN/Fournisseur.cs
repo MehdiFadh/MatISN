@@ -40,6 +40,13 @@ namespace MatISN
 
 
         }
+        public Fournisseur(string nomFournisseur)
+        {
+            NomFournisseur = nomFournisseur;
+            this.NumFournisseur = ajoutFournisseur;
+            ajoutFournisseur++;
+        }
 
-	}
+
+    }
 }

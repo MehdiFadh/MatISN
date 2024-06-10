@@ -219,7 +219,7 @@ namespace MatISN
         private void Button_Click(object sender, RoutedEventArgs e)
         {
             Commande test = new Commande();
-            //data.Create(test);
+            data.Create(test);
             
         }
     }

@@ -114,7 +114,7 @@ namespace MatISN
         public int ReadSuivie()
         {
             LesCommandes = new ObservableCollection<Commande>();
-            String sql = "SELECT NUM_TRANSPORT, NUM_CASERNE, DATE_COMMANDE, DATE_LIVRAISON FROM COMMANDE";
+            String sql = "SELECT NUM_TRANSPORT, NUM_CASERNE, DATE_COMMANDE, DATE_LIVRAISON, NOM_FOURNISSEUR FROM COMMANDE join FOURNISSEUR on ";
             try
             {
                 NpgsqlDataAdapter dataAdapter = new NpgsqlDataAdapter(sql, Connexion);
@@ -123,7 +123,7 @@ namespace MatISN
                 foreach (DataRow res in dataTable.Rows)
                 {
                     Commande nouveau = new Commande(DateTime.Parse(res["DATE_COMMANDE"].ToString()), DateTime.Parse(res["DATE_LIVRAISON"].ToString()),
-                    new Caserne(), new Mode_transport());
+                    new Caserne(), new Mode_transport(), new Fournisseur());
                     LesCommandes.Add(nouveau);
                 }
                 return dataTable.Rows.Count;

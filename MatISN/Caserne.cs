@@ -100,5 +100,11 @@ namespace MatISN
             this.numCaserne = ajoutCaserne;
             ajoutCaserne++;
         }
+        public Caserne(string nom)
+        {
+            Nom = nom;
+            this.numCaserne = ajoutCaserne;
+            ajoutCaserne++;
+        }
     }
 }
