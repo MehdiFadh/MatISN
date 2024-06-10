@@ -24,12 +24,13 @@ namespace MatISN
     /// </summary>
     public partial class MainWindow : Window
     {
-        public Commande commandeSelect;
-        public ObservableCollection<Material> materialList;
-        public ObservableCollection<Commande> commandeList;
+        
 
         public MainWindow()
         {
+            pageConnection dialogConnection = new pageConnection();
+            dialogConnection.ShowDialog();
+
             InitializeComponent();
             AjouterText(txtPrenom, null);
             AjouterText(txtNom, null);
@@ -46,8 +47,7 @@ namespace MatISN
             //MaterialDataGrid2.ItemsSource = ;
 
 
-            pageConnection dialogConnection = new pageConnection();
-            dialogConnection.ShowDialog();
+            
 
             ChargementEquipement();
             
