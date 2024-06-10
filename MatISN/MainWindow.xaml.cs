@@ -202,7 +202,7 @@ namespace MatISN
             {
                 if (mat.IsSelected)
                 {
-                    if(mat.Quantite > 0)
+                    if(mat.Quantite > 0 && !SuivieCommande.Contains(mat))
                     {
                         SuivieCommande.Add(mat);
                         PrixTotal += mat.Prix * mat.Quantite;
