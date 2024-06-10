@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.ComponentModel;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -15,6 +16,7 @@ namespace MatISN
         private Fournisseur unFournisseur;
         private Caserne uneCaserne;
         private Mode_transport unModeTransport;
+        public bool isSelected;
 
         public Commande()
         {
@@ -117,6 +119,29 @@ namespace MatISN
             set { numCaserne = value; }
         }
 
+        public bool IsSelected
+        {
+            get
+            {
+                return isSelected;
+            }
+
+            set
+            {
+                if (isSelected != value)
+                {
+                    isSelected = value;
+                    OnPropertyChanged(nameof(IsSelected));
+                }
+            }
+        }
+
+        public event PropertyChangedEventHandler PropertyChanged;
+
+        protected void OnPropertyChanged(string propertyName)
+        {
+            PropertyChanged?.Invoke(this, new PropertyChangedEventArgs(propertyName));
+        }
 
 
         public Fournisseur UnFournisseur { get => unFournisseur; set => unFournisseur = value; }

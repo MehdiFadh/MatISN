@@ -25,6 +25,7 @@ namespace MatISN
     public partial class MainWindow : Window
     {
         public ObservableCollection<Materiel> suiviCommande = new ObservableCollection<Materiel>();
+        private ObservableCollection<Commande> commandeDate = new ObservableCollection<Commande>();
 
         public MainWindow()
         {
@@ -42,12 +43,13 @@ namespace MatISN
 
             materielSuivie.ItemsSource = suiviCommande;
 
+            MaterialDataGridDateLivraison.ItemsSource = CommandeDate;
 
-            
+
             //MaterialDataGrid2.ItemsSource = ;
 
 
-            
+
 
             ChargementEquipement();
             
@@ -61,6 +63,19 @@ namespace MatISN
         {
             get { return suiviCommande; }
             set { suiviCommande = value; }
+        }
+
+        public ObservableCollection<Commande> CommandeDate
+        {
+            get
+            {
+                return commandeDate;
+            }
+
+            set
+            {
+                commandeDate = value;
+            }
         }
 
         private void ChargementEquipement()
@@ -202,19 +217,31 @@ namespace MatISN
 
         private void DateLivraison_Click(object sender, RoutedEventArgs e)
         {
-            //commandeSelect = MaterialDataGrid2.Items;
+            foreach (Commande mat in MaterialDataGrid2.ItemsSource)
+            {
+                if (mat.IsSelected)
+                {
+                    CommandeDate.Add(mat);
+                }
+            }
             GridSuivieDemande.Visibility = Visibility.Collapsed;
             GridDateLivraison.Visibility = Visibility.Visible;
         }
 
         private void AnnulerLivraison_Click(object sender, RoutedEventArgs e)
         {
+            commandeDate.Clear();
             GridSuivieDemande.Visibility = Visibility.Visible;
             GridDateLivraison.Visibility = Visibility.Collapsed;
         }
 
         private void ValiderDateLivraison_Click(object sender, RoutedEventArgs e)
         {
+            foreach(Commande mat in CommandeDate)
+            {
+                mat.DateLivraison = DateSuivie.DisplayDate;
+            }
+            commandeDate.Clear();
             GridSuivieDemande.Visibility = Visibility.Visible;
             GridDateLivraison.Visibility = Visibility.Collapsed;
         }

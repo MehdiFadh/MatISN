@@ -248,11 +248,13 @@
                     <DataGrid.Columns>
                         <DataGridTemplateColumn Width="50">
                             <DataGridTemplateColumn.Header>
-                                <CheckBox />
+                                <CheckBox
+                                        IsChecked="{Binding IsSelected, Mode=TwoWay}" />
                             </DataGridTemplateColumn.Header>
                             <DataGridTemplateColumn.CellTemplate>
                                 <DataTemplate>
-                                    <CheckBox />
+                                    <CheckBox
+                                        IsChecked="{Binding IsSelected, Mode=TwoWay}" />
                                 </DataTemplate>
                             </DataGridTemplateColumn.CellTemplate>
                         </DataGridTemplateColumn>
@@ -268,6 +270,7 @@
                             Width="*"
                             Binding="{Binding DATE_LIVRAISON}"
                             Header="Date" />
+                        
                     </DataGrid.Columns>
                 </DataGrid>
 
@@ -492,37 +495,10 @@
 
                 <DataGrid
                     x:Name="MaterialDataGridDateLivraison"
-                    Margin="0,10,0,10"
-                    AutoGenerateColumns="False"
-                    CanUserAddRows="False" ItemsSource="{Binding LesCommandes}">
-                    <DataGrid.Columns>
-                        <DataGridTemplateColumn Width="50">
-                            <DataGridTemplateColumn.Header>
-                                <CheckBox />
-                            </DataGridTemplateColumn.Header>
-                            <DataGridTemplateColumn.CellTemplate>
-                                <DataTemplate>
-                                    <CheckBox />
-                                </DataTemplate>
-                            </DataGridTemplateColumn.CellTemplate>
-                        </DataGridTemplateColumn>
-                        <DataGridTextColumn
-                            Width="*"
-                            Binding="{Binding UnFournisseur.NomFournisseur}"
-                            Header="Nom" />
-                        <DataGridTextColumn
-                            Width="*"
-                            Binding="{Binding UnModeTransport.NomTransport}"
-                            Header="Catégorie" />
-                        <DataGridTextColumn
-                            Width="*"
-                            Binding="{Binding DATE_LIVRAISON}"
-                            Header="Date" />
+                    AutoGenerateColumns="True"/>
 
-                    </DataGrid.Columns>
-                </DataGrid>
 
-                <DatePicker Margin="0,20,0,0" />
+                <DatePicker x:Name="DateSuivie" Margin="0,20,0,0" />
 
                 <Grid>
                     <Button
