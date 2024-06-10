@@ -525,24 +525,34 @@
                     Margin="0,10,0,10"
                     AutoGenerateColumns="False"
                     CanUserAddRows="False" ItemsSource="{Binding LesCommandes}"/>
-                    <DataGrid.Columns>
-                        <DataGridTemplateColumn Width="50" />
-                        <DataGridTextColumn
-                        Width="*"
-                        Binding="{Binding UneCaserne.Nom}"
-                        Header="Nom" />
+                <DataGrid.Columns>
+                    <DataGridTemplateColumn Width="50">
+                        <DataGridTemplateColumn.Header>
+                            <CheckBox />
+                        </DataGridTemplateColumn.Header>
+                        <DataGridTemplateColumn.CellTemplate>
+                            <DataTemplate>
+                                <CheckBox />
+                            </DataTemplate>
+                        </DataGridTemplateColumn.CellTemplate>
+                    </DataGridTemplateColumn>
                     <DataGridTextColumn
-                        Width="*"
-                        Binding="{Binding UnModeTransport.NomTransport}"
-                        Header="Catégorie" />
+                            Width="*"
+                            Binding="{Binding UneCaserne.Nom}"
+                            Header="Nom" />
                     <DataGridTextColumn
-                        Width="*"
-                        Binding="{Binding DATE_LIVRAISON}"
-                        Header="Date" />
-                    </DataGrid.Columns>
+                            Width="*"
+                            Binding="{Binding UnModeTransport.NomTransport}"
+                            Header="Catégorie" />
+                    <DataGridTextColumn
+                            Width="*"
+                            Binding="{Binding DATE_LIVRAISON}"
+                            Header="Date" />
+
+                </DataGrid.Columns>
 
 
-                    <DatePicker Margin="0,20,0,0" />
+                <DatePicker Margin="0,20,0,0" />
 
                 <Grid>
                     <Button
