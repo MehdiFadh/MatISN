@@ -41,7 +41,7 @@ namespace MatISN
 
             EquipmentList.Items.Filter = ContientMotClef;
 
-            materielSuivie.ItemsSource = suiviCommande;
+            materielSuivie.ItemsSource = SuivieCommande;
 
             MaterialDataGridDateLivraison.ItemsSource = CommandeDate;
 
@@ -202,11 +202,22 @@ namespace MatISN
             {
                 if (mat.IsSelected)
                 {
-                    SuivieCommande.Add(mat);
-                    PrixTotal += mat.Prix * mat.Quantite;
+                    if(mat.Quantite > 0)
+                    {
+                        SuivieCommande.Add(mat);
+                        PrixTotal += mat.Prix * mat.Quantite;
+                    }
+                    
+
+                    
                 }
+                if (!mat.IsSelected)
+                {
+                    SuivieCommande.Remove(mat);
+                }
+
             }
-            txtPrixTotal.Text = $"Prix total : {PrixTotal}";
+            txtPrixTotal.Text = $"Prix total : {PrixTotal:C}";
         }
 
         private void SelectionSuivie(object sender, PropertyChangedEventArgs e)
@@ -252,9 +263,9 @@ namespace MatISN
             if (String.IsNullOrEmpty(textMotClef.Text))
                 return true;
             else
-                return (unMateriel.Marque.StartsWith(textMotClef.Text, StringComparison.OrdinalIgnoreCase)
-                || unMateriel.NomFournisseur.StartsWith(textMotClef.Text, StringComparison.OrdinalIgnoreCase)
-                || unMateriel.DescriptionMateriel.StartsWith(textMotClef.Text, StringComparison.OrdinalIgnoreCase));
+                return (unMateriel.DescriptionMateriel.StartsWith(textMotClef.Text, StringComparison.OrdinalIgnoreCase)
+                || unMateriel.Marque.StartsWith(textMotClef.Text, StringComparison.OrdinalIgnoreCase)
+                || unMateriel.NomFournisseur.StartsWith(textMotClef.Text, StringComparison.OrdinalIgnoreCase));
         }
 
         private void Button_Click(object sender, RoutedEventArgs e)

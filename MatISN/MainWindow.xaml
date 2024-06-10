@@ -404,7 +404,7 @@
                                         Width="100"
                                         Margin="5"
                                         VerticalAlignment="Center"
-                                        Text="{Binding UntypeMateriel.CodeType}" />
+                                        Text="{Binding CodeType}" />
                                     <TextBlock
                                         Width="50"
                                         Margin="5"
