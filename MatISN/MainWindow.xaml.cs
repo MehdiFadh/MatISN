@@ -22,6 +22,7 @@ namespace MatISN
     /// <summary>
     /// Interaction logic for MainWindow.xaml
     /// </summary>
+    /// test
     public partial class MainWindow : Window
     {
         public ObservableCollection<Materiel> suiviCommande = new ObservableCollection<Materiel>();
